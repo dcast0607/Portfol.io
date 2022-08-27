@@ -33,10 +33,14 @@ const client = new ApolloClient({
 });
 
 function App() {
+const styles = {
+
+}
+
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Nav />
+        <Nav style={styles.nav}/>
         <div>
           <Routes>
             <Route
