@@ -60,12 +60,16 @@ const Login = () => {
     const transitionPropertiesOne = startLogin ? { marginLeft: '110px'} : {};
 
     return (
+      <div className="mainInput">
+        <div className="appName">
+          <h1><span className="portfol">Portfol.</span><span className="io">IO</span></h1>
+        </div>
       <div className="loginRegister">
         <div className="buttonSwitch">
           <div id="btn" style={transitionPropertiesOne}></div>
           <button type="button" class="toggle-btn" onClick={() => setStartLogin(!startLogin)}>
             <div className="spacebuttons">
-              <span>Login</span><span>Register</span>
+              <span className="space">Login</span><span className="space">Register</span>
             </div>
           </button>
           {/* <button type="button" class="toggle-btn" onClick={register}>Register</button> */}
@@ -143,7 +147,8 @@ const Login = () => {
               </form>
             </div>
         </div>
-  </div>
+      </div>
+      </div>
     )
 }
 
