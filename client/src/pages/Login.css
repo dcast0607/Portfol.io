@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Titilium";
+  src: url(../components/Titilium.ttf);
+}
+
+input {
+  width: 350px;
+  height: 20px;
+  font-size: 18px;
+}
+
+.portfol {
+  font-family: "Titilium";
+  font-size: 150px;
+}
+
+.io {
+  font-size: 150px;
+  font-family: "Titilium";
+  color: rgba(68, 68, 209, 0.829);
+}
+
+.buttonSwitch {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+  box-shadow: 0 0 5px 0px #000000;
+  width: 225px;
+  margin: 35px auto;
+  border-radius: 10px;
+}
+
+.mainInput {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.appName {
+  margin: auto 0% auto auto;
+  font-size: 100px;
+  font-family: "Titilium";
+}
+
+.loginRegister {
+  margin-left: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  height: 560px;
+  position: relative;
+  margin: 6% auto 6% 10%;
+  background: #fff;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0px solid black;
+  box-shadow: 0 0 5px 0px rgb(78, 78, 78);
+}
+
+.space {
+  margin-left: 40px;
+  margin-right: 30px;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+
+.inputForms {
+  margin-top: 30px;
+  display: flex;
+  width: 300px;
+  transition-property: margin-left;
+  transition-duration: 1s;
+}
+
+.button-box {
+  width: 225px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 10px 0px #000000;
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+#userlogin {
+  margin-left: 80px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 115px;
+  height: 100%;
+  background: linear-gradient(to right, #9ca6d375, #8296f196);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.space-between {
+  margin-bottom: 30px;
+}
+
+#register {
+  margin-left: 290px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+
+.bottomButton {
+  width: 120px;
+  height: 30px;
+  font-size: 18px;
+}
