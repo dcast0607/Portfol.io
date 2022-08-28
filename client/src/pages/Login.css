@@ -3,6 +3,12 @@
   src: url(../components/Titilium.ttf);
 }
 
+input {
+  width: 350px;
+  height: 20px;
+  font-size: 18px;
+}
+
 .portfol {
   font-family: "Titilium";
   font-size: 150px;
@@ -82,7 +88,10 @@
 }
 
 #userlogin {
-  margin-left: 10px;
+  margin-left: 80px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
 #btn {
@@ -96,8 +105,15 @@
   transition: 0.5s;
 }
 
+.space-between {
+  margin-bottom: 30px;
+}
+
 #register {
-  margin-left: 250px;
+  margin-left: 290px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
 }
 
 .toggle-btn {
@@ -107,4 +123,10 @@
   border: 0;
   outline: none;
   position: relative;
+}
+
+.bottomButton {
+  width: 120px;
+  height: 30px;
+  font-size: 18px;
 }

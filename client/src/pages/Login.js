@@ -78,7 +78,7 @@ const Login = () => {
         <div className="inputForms" style={transitionProperties}>
           <div className="container">
             <form onSubmit={handleFormSubmit} id="userlogin">
-              <h2>Login</h2>
+              <h2 className='center'></h2>
               <div className="flex-row space-between my-2">
                 <label htmlFor="email">Email address:</label>
                 <input
@@ -104,14 +104,14 @@ const Login = () => {
                     <p className="error-text">The provided credentials are incorrect</p>
                   </div>
                 ) : null}
-              <div className="flex-row flex-end">
-                <button type="submit">Submit</button>
+              <div className="flex-row flex-end space-between">
+                <button className="bottomButton" type="submit">Submit</button>
               </div>
             </form>
           </div>
           <div className="container">
               <form onSubmit={handleSignSubmit} id="register">
-              <h2>Signup</h2>
+              <h2></h2>
                 <div className="flex-row space-between my-2">
                   <label htmlFor="username">Username:</label>
                   <input
@@ -142,8 +142,8 @@ const Login = () => {
                     onChange={handleSignChange}
                   />
                 </div>
-                <div className="flex-row flex-end">
-                  <button type="submit">Register</button>
+                <div className="flex-row flex-end space-between">
+                  <button className="bottomButton" type="submit">Register</button>
                 </div>
               </form>
             </div>
