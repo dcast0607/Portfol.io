@@ -14,10 +14,24 @@ input {
   font-size: 150px;
 }
 
+.port {
+  font-family: "Titilium";
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+
 .io {
   font-size: 150px;
   font-family: "Titilium";
   color: rgba(68, 68, 209, 0.829);
+}
+
+.folio {
+  font-size: 20px;
+  font-family: "Titilium";
+  color: rgba(68, 68, 209, 0.829);
+  font-weight: 600;
 }
 
 .buttonSwitch {
@@ -25,7 +39,7 @@ input {
   justify-content: center;
   margin-top: 30px;
   position: relative;
-  box-shadow: 0 0 5px 0px #000000;
+  box-shadow: 0 0 5px 0px #000000ce;
   width: 225px;
   margin: 35px auto;
   border-radius: 10px;
@@ -88,7 +102,7 @@ input {
 }
 
 #userlogin {
-  margin-left: 80px;
+  margin-left: 70px;
   flex-direction: column;
   display: flex;
   align-items: center;
