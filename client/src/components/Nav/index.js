@@ -30,6 +30,9 @@ function Nav() {
       color: 'black',
       fontWeight: '300'
     },
+    link: {
+      textDecoration: 'none'
+    }
     
   }
 
@@ -76,7 +79,9 @@ function Nav() {
       return (
         <header style={styles.container}>
             <div>
-              <span className="port">Portfol.</span><span className="folio">IO</span>
+                <Link to="/" style={styles.link}>
+                <span className="port">Portfol.</span><span className="folio">IO</span>
+                </Link>
             </div>
             <nav>
                 {showNavigation()}
