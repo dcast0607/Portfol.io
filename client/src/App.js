@@ -13,7 +13,6 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import UserDataCollection from './pages/userDataCollection';
-
 import './App.css';
 
 const httpLink = createHttpLink({
