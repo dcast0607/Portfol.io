@@ -12,6 +12,8 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import UserDataCollection from './pages/userDataCollection';
+
 import './App.css';
 
 const httpLink = createHttpLink({
@@ -55,6 +57,10 @@ const styles = {
             <Route 
               path="/signup" 
               element={<Signup />} 
+            />
+            <Route 
+              path="/dataEntry" 
+              element={<UserDataCollection />} 
             />
           </Routes>
         </div>
