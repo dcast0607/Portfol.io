@@ -5,9 +5,7 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      portfolio {
-        name
-      }
+      portfolio 
     }
   }
 `;
