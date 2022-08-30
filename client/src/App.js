@@ -12,6 +12,8 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Profile from './pages/Profile';
+import CreatePortfolio from './pages/CreatePortfolio';
 import './App.css';
 
 const httpLink = createHttpLink({
@@ -53,8 +55,16 @@ const styles = {
               element={<Login />}
             />
             <Route 
-              path="/signup" 
+              path='/signup' 
               element={<Signup />} 
+            />
+            <Route 
+              path='/profile'
+              element={<Profile />} 
+            />
+            <Route
+              path='/create'
+              element={<CreatePortfolio />}
             />
           </Routes>
         </div>

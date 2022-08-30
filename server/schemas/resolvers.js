@@ -4,13 +4,12 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-      user: async (parent, args, context) => {
+      me: async (parent, args, context) => {
+        console.log(context)
         if (context.user) {
-          const user = await User.findById(context.user._id)
-          return user;
+          return User.findOne({ _id: context.user._id });
         }
-  
-        throw new AuthenticationError('Not logged in');
+        throw new AuthenticationError('You need to be logged in!');
       },
     },
     Mutation: {
@@ -36,6 +35,21 @@ const resolvers = {
         const token = signToken(user);
   
         return { token, user };
+      },
+      savePortfolio: async (parent, { portfolioBody }, context) => {
+        if (context.user) {
+          return User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                  $addToSet: { portfolio: portfolioBody },
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+          );
+        }
+        throw new AuthenticationError('You need to be logged in!');
       }
     }
   };
