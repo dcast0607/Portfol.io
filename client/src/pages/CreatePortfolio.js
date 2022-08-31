@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useMutation } from '@apollo/client';
 import { SAVE_PORTFOLIO } from "../utils/mutations";
+import {StyleOne, StyleTwo} from "../components/PortfolioStyles"
 
 
 const CreatePortfolio = () => {
@@ -38,6 +39,8 @@ const CreatePortfolio = () => {
             id="portfolioStyle"
             onChange={handleChange}
           />
+          <img alt="preview for portfolio Style One"/>
+          <img alt="preview for portfolio Style Two"/>
         </div>
         <div className="flex-row space-between my-2">
           <label htmlFor="name">Name:</label>
