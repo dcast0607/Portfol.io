@@ -10,6 +10,8 @@ function Nav() {
 
   const styles = {
     container: {
+      position: 'fixed',
+      top: '0',
       width: '100%',
       backgroundColor: '#e7e7e7ce',
       color: 'white',

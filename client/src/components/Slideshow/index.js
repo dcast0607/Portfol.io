@@ -1,26 +1,45 @@
 import React, { useState } from "react";
+// import '../../pages/Login.css';
 
 function Slideshow() {
 const styles = {
     container: {
         width: '40%',
         height: '300px',
-        margin: '5% 30%'
+
     },
     btnWrap: {
         position: 'relative',
-        top: '60%',
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         width: '100%'
     },
     btn: {
         border: 'none',
+        margin: '5px',
+        width: '80px',
+        borderRadius: '5px',
+        border: '1px solid black',
     },
     img: {
         maxWidth: '100%',
         maxHeight:'fit-content',
+        boxShadow: '0 0 5px 0px #000000ce',
+        borderRadius: '5px',
+    },
+    homecontainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+
+    },
+    header: {
+        fontFamily: 'Justink',
+        fontSize: '40px',
+        textShadow: '0px 0px 5px white',
+        marginBottom: '1%',
     }
+
 }
 
     const [slide, setImage] = useState(0)
@@ -42,13 +61,16 @@ const styles = {
     }
 
     return (
-        <div style={styles.container}>
-            <div style={styles.btnWrap}>
-                <button onClick={handleDecrement} style={styles.btn}>down</button>
-                <button onClick={handleIncrement} style={styles.btn}>up</button>
-            </div>
-            <img src={`/images/slide${slide}.png`} style={styles.img} alt={`Preview ${slide}`} />
+        <div style={styles.homecontainer}>
+            <div style={styles.header}>Choose from a variety of styles!</div>
+            <div style={styles.container}>
+                <img src={`/images/slide${slide}.png`} style={styles.img} alt={`Preview ${slide}`} />
+                <div style={styles.btnWrap}>
+                    <button onClick={handleDecrement} style={styles.btn}>Previous</button>
+                    <button onClick={handleIncrement} style={styles.btn}>Next</button>
+                </div>
 
+            </div>
         </div>
     )
 }

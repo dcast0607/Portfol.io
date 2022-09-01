@@ -10,12 +10,10 @@ const resolvers = {
           return User.findOne({ _id: context.user._id });
         }
 
+
         throw new AuthenticationError('You need to be logged in!');
       }
 
-  
-        throw new AuthenticationError('Not logged in');
-      },
     Mutation: {
       addUser: async (parent, args) => {
         const user = await User.create(args);
