@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import '../../pages/Login.css';
+import {testimonials} from './testimonials/testimonials'
 
 function Slideshow() {
 const styles = {
@@ -15,7 +16,6 @@ const styles = {
         width: '100%'
     },
     btn: {
-        border: 'none',
         margin: '5px',
         width: '80px',
         borderRadius: '5px',
@@ -38,6 +38,13 @@ const styles = {
         fontSize: '40px',
         textShadow: '0px 0px 5px white',
         marginBottom: '1%',
+    },
+    testimonial: {
+        display: 'flex',
+        alignItems: 'flex-end',
+        flexDirection: 'column',
+        width: '100%',
+        margin: '2% auto',
     }
 
 }
@@ -60,11 +67,17 @@ const styles = {
         }
     }
 
+    console.log(testimonials[1].username);
+
     return (
         <div style={styles.homecontainer}>
             <div style={styles.header}>Choose from a variety of styles!</div>
             <div style={styles.container}>
                 <img src={`/images/slide${slide}.png`} style={styles.img} alt={`Preview ${slide}`} />
+                    <div style={styles.testimonial}>
+                        <h2>"{testimonials[slide].testimonial}"</h2>
+                        <h2>- {testimonials[slide].username}</h2>
+                    </div>
                 <div style={styles.btnWrap}>
                     <button onClick={handleDecrement} style={styles.btn}>Previous</button>
                     <button onClick={handleIncrement} style={styles.btn}>Next</button>
