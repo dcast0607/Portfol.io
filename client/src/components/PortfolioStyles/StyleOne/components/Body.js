@@ -23,7 +23,7 @@ const Body = () => {
             </header>
             <div style={styles.container}>
                 <div>
-                    <img alt="profile" src={require('../images/profile.png')} style={styles.portrait}/>
+                    <img alt="portrait" src={require()} style={styles.portrait}/>
                 </div>
                 <div>
                     <p style={styles.bio}>

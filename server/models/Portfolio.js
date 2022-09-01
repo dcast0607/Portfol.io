@@ -17,6 +17,9 @@ portfolioStyle: {
   portrait: {
     type: String,
   },
+  title: {
+    type: String,
+  }
 });
 
 module.exports = portfolioSchema;

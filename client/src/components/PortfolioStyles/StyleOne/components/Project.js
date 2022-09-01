@@ -47,7 +47,7 @@ const Project = () => { //create a project object and map over it instead of rep
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/mvcTechBlog" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/techBlog.png')}  alt="Tech Blog" style={styles.img}/>
+                    <img src={require()}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Tech Blog</h5>
@@ -56,7 +56,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/E-CommerceBackEnd" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/eCom.png')}  alt="E-Commerce" style={styles.img}/>
+                    <img src={require()}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>E-Commerce</h5>
@@ -65,7 +65,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/expressNoteTaker" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/noteTaker.png')}  alt="Note Taker" style={styles.img}/>
+                    <img src={require()}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Note Taker</h5>
@@ -77,7 +77,7 @@ const Project = () => { //create a project object and map over it instead of rep
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/employeeTracker" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/employeeTracker.png')}  alt="Employee Tracker" style={styles.img}/>
+                    <img src={require()}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Employee Tracker</h5>
@@ -86,7 +86,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://cartaud.github.io/etch-a-sketch/" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/etch.png')}  alt="Etch-A-Sketch" style={styles.img}/>
+                    <img src={require()}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Etch-A-Sketch</h5>
@@ -95,7 +95,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/vinylMusicShop" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/musicStore.png')}  alt="Music Store" style={styles.img}/>
+                    <img src={require()}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Music Store</h5>

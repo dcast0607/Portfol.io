@@ -11,7 +11,7 @@ function Portfolio(profile) {
           //repeat for all possible styles that we create
           //example: <PortfolioStyleOne params={profile} />
           return (
-            <></>
+            <portfolioStyleOne args={profile.portfolio}/>
           )
         } else if (portfolioStyle === 'two') {
           return <></>
