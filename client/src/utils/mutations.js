@@ -30,3 +30,11 @@ export const LOGIN = gql`
   }
 `;
 
+export const SAVE_PORTFOLIO = gql`
+  mutation savePortfolio($input: portfolioBody!) {
+    savePortfolio(input: $input) {
+      not sure what to return yet
+    }
+  }
+`
+

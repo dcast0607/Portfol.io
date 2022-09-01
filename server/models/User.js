@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
+const portfolioSchema = require('./portfolio');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
@@ -19,6 +20,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+  portfolio: [portfolioSchema]
 });
 
 // set up pre-save middleware to create password
