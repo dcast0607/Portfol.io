@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -8,9 +9,13 @@ const resolvers = {
         if (context.user) {
           return User.findOne({ _id: context.user._id });
         }
+
         throw new AuthenticationError('You need to be logged in!');
       }
-    },
+
+  
+        throw new AuthenticationError('Not logged in');
+      },
     Mutation: {
       addUser: async (parent, args) => {
         const user = await User.create(args);
@@ -52,5 +57,6 @@ const resolvers = {
       }
     }
   };
+
   
   module.exports = resolvers;
