@@ -16,7 +16,7 @@ const Resume = () => {
             </header>
             <div>
                 <a href="https://drive.google.com/file/d/1n5-wPxqw82s8pUMNHW0HL1LJuLcvy4Tn/view?usp=sharing" target="_blank" rel="noreferrer">
-                    <img src={require()} alt="Resume preview" style={styles.resume}/>
+                    <img src={``} alt="Resume preview" style={styles.resume}/>
                 </a>
             </div>
         </div>

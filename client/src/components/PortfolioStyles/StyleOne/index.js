@@ -9,7 +9,11 @@ function StyleOne(params) {
         {
             name: 'John Doe', 
             bio: 'Hi my name is John and this is my ', 
-            portrait: '' 
+            portrait: '' ,
+            title: 'Johns Portfolio',
+            projects: [
+                'Johns Project',
+            ]
         }
     );
     if (params) {

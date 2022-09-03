@@ -71,6 +71,7 @@ const CreatePortfolio = () => {
             <input
               name="portfolioStyle"
               type="radio"
+              value={"one"}
               style={styles.radio}
               onChange={handleChange}
             />

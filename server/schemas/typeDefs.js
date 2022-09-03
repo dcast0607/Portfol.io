@@ -1,11 +1,25 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+  input projectsBody {
+    projectName: String
+    projectUrl: String
+    projectPreview: String
+  }
+
+  input resumeBody {
+    resumeUrl: String
+    resumePreview: String
+  }
+
   input portfolioBody {
     portfolioStyle: String!
     name: String
     bio: String
     portrait: String
+    title: String
+    projects: [String]
+    resume: [String]
   }
 
   type User {
