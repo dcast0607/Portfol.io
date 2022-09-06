@@ -35,8 +35,8 @@ const styles = {
     },
 };
 
-const Project = (params) => { //create a project object and map over it instead of repeating the same code 
-
+const Project = (props) => { //create a project object and map over it instead of repeating the same code 
+    //need to map over params.projects 
     return (
     <div>
         <header>
@@ -44,6 +44,9 @@ const Project = (params) => { //create a project object and map over it instead 
             <h2>CLICK ON THE PROJECT TO VIEW</h2>
         </header>
         <div style={styles.projects}>
+            {props.params.projects.map((project) => (
+                <div>map projects here</div>
+            ))}
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/mvcTechBlog" target="_blank" rel="noreferrer" style={styles.fit}>

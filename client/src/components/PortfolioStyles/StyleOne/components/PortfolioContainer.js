@@ -22,7 +22,7 @@ const PortfolioContainer = (params) => {
     })
     
     const loadAbout = () => {
-        setBody(<Body />)
+        setBody(<Body params={params}/>)
         setStyle({
             about: {
                 color: '#f19b2c'
@@ -31,7 +31,7 @@ const PortfolioContainer = (params) => {
     }
 
     const loadProjects = () => {
-        setBody(<Project />)
+        setBody(<Project params={params}/>)
         setStyle({
             projects: {
                 color: '#f19b2c'
@@ -40,7 +40,7 @@ const PortfolioContainer = (params) => {
     }
 
     const loadResume = () => {
-        setBody(<Resume />)
+        setBody(<Resume params={params}/>)
         setStyle({
             resume: {
                 color: '#f19b2c'
@@ -51,7 +51,7 @@ const PortfolioContainer = (params) => {
     return (
         <div style={styles.container}>
             <Header loadAbout={loadAbout} loadProjects={loadProjects} loadResume={loadResume} style={style} params={params}/>
-            <Content content={body} params={params}/>
+            <Content content={body}/>
         </div>
     )
 }

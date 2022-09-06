@@ -49,6 +49,21 @@ const resolvers = {
           );
         }
         throw new AuthenticationError('You need to be logged in!');
+      },
+      saveProject: async (parent, { projectBody }, context) => {
+        if (context.user) {
+          return User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                  $addToSet: { portfolio: { projects: projectBody } },
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+          );
+        }
+        throw new AuthenticationError('You need to be logged in!');
       }
     }
   };

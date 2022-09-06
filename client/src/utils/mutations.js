@@ -38,3 +38,11 @@ export const SAVE_PORTFOLIO = gql`
   }
 `
 
+export const SAVE_PROJECT = gql`
+  mutation saveProject($input: projectBody!) {
+    saveProject(input: $input) {
+      not sure what to return yet
+    }
+  }
+`
+

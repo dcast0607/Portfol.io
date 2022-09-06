@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_PORTFOLIO } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries"
-import {StyleOne, StyleTwo} from "../components/PortfolioStyles"
+import AddProject from "../components/AddProject";
+import { Link } from "react-router-dom";
 
 
 const CreatePortfolio = () => {
@@ -13,8 +14,10 @@ const CreatePortfolio = () => {
     
 
     //saving info to Users portfolio schema 
-    const [formState, setFormState] = useState({ portfolioStyle: '', name: '', bio: '', portrait: '', title: '' });
+    const [formState, setFormState] = useState({ portfolioStyle: '', name: '', bio: '', portrait: '', title: '', resumeUrl: '' });
     const [savePortfolio] = useMutation(SAVE_PORTFOLIO);
+
+    const [ProjContent, setProjContent] = useState(<button>add project+</button>)
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -32,13 +35,40 @@ const CreatePortfolio = () => {
         });
       };
 
+      const clickProjContent = () => {
+        setProjContent(<AddProject />)
+      }
+
       const styles = {
+        noUser: {
+          width: '50%',
+          margin: '20px 25%',
+          textAlign: 'center'
+        },
+        link: {
+          textDecoration: 'none',
+        },
+        title: {
+          textAlign: 'center',
+          marginTop: '10px'
+        },
+        form: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+        },
+        inputContainer: {
+          marginLeft: '5%',
+          marginRight: '5%',
+          display: 'flex',
+          flexDirection: 'column',
+        },
         portfolioStyles: {
           display: 'flex',
-          marginTop: '2vw',
           width: '100%',
           display: 'flex',
-          justifyContent: 'space-around'
+          marginTop: '10px',
+          justifyContent: 'space-between'
         },
         styleContainer: {
           width: '20%',
@@ -49,53 +79,68 @@ const CreatePortfolio = () => {
         },
         radio: {
           width: '100%'
-        }
+        },
+        bio: {
+          width: '50%',
+          height: '5vw',
+          outline: 'none',
+          padding: '4px'
+        },
+        btn: {
+          marginLeft: '5%',
+          width: '10%'
+        },
       }
 
       if (!profile?.username) {
         return (
-          <h4>
-            You need to be logged in to create a portfolio. Use the navigation
-            links above to sign up or log in!
+          <h4 style={styles.noUser}>
+            Oops, looks like you're not logged in! Click 
+            <Link to="/login" style={styles.link}> here </Link>
+            to log in.
           </h4>
         );
     }
 
     return (
         //here we will render the form that will gather the users information
-      <div>
-        <form onSubmit={handleFormSubmit}>
-        <div style={styles.portfolioStyles}>
-          <label htmlFor="portfolioStyleOne" style={styles.styleContainer}>
-            <img src={`/images/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
-            <input
-              name="portfolioStyle"
-              type="radio"
-              value={"one"}
-              style={styles.radio}
-              onChange={handleChange}
-            />
-          </label>
-          <label htmlFor="portfolioStyleTwo" style={styles.styleContainer}>
-            <img src={`/images/slide1.png`} alt="preview for portfolio Style Two" style={styles.img}/>
-            <input
-              name="portfolioStyle"
-              type="radio"
-              style={styles.radio}
-              onChange={handleChange}
-            />
-          </label>
-          <label htmlFor="portfolioStyleThree" style={styles.styleContainer}>
-            <img src={`/images/slide2.png`} alt="preview for portfolio Style Three" style={styles.img}/>
-            <input
-              name="portfolioStyle"
-              type="radio"
-              style={styles.radio}
-              onChange={handleChange}
-            />
-          </label>
+      <div> 
+        <h2 style={styles.title}>CREATE YOUR PORTFOLIO</h2>
+        <form onSubmit={handleFormSubmit} style={styles.form}>
+        <div style={styles.inputContainer}>
+          <label htmlFor="portfolioStyles">Choose a style for your portfolio:</label>
+          <div style={styles.portfolioStyles} name="portfolioStyles">
+            <label htmlFor="portfolioStyleOne" style={styles.styleContainer}>
+              <img src={`/images/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
+              <input
+                name="portfolioStyle"
+                type="radio"
+                value={"one"}
+                style={styles.radio}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="portfolioStyleTwo" style={styles.styleContainer}>
+              <img src={`/images/slide1.png`} alt="preview for portfolio Style Two" style={styles.img}/>
+              <input
+                name="portfolioStyle"
+                type="radio"
+                style={styles.radio}
+                onChange={handleChange}
+              />
+            </label>
+            <label htmlFor="portfolioStyleThree" style={styles.styleContainer}>
+              <img src={`/images/slide2.png`} alt="preview for portfolio Style Three" style={styles.img}/>
+              <input
+                name="portfolioStyle"
+                type="radio"
+                style={styles.radio}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
         </div>
-        <div>
+        <div style={styles.inputContainer}>
           <label htmlFor="name">Name:</label>
           <input
             placeholder="John Doe"
@@ -105,7 +150,7 @@ const CreatePortfolio = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div style={styles.inputContainer}>
           <label htmlFor="name">Title:</label>
           <input
             placeholder="Title for portfolio"
@@ -115,16 +160,17 @@ const CreatePortfolio = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div style={styles.inputContainer}>
           <label htmlFor="bio">Bio:</label>
           <textarea
             placeholder="Describe yourself in a paragraph"
             name="bio"
             id="bio"
             onChange={handleChange}
+            style={styles.bio}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div style={styles.inputContainer}>
           <label htmlFor="portrait">Upload a self-portrait:</label>
           <input
             placeholder="John Doe"
@@ -134,7 +180,18 @@ const CreatePortfolio = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row flex-end">
+        <div onClick={clickProjContent} style={styles.btn}>{ProjContent}</div>
+        <div style={styles.inputContainer}>
+          <label htmlFor="name">Resume:</label>
+          <input
+            placeholder="Resume URL"
+            name="resumeUrl"
+            type="text"
+            id="resume"
+            onChange={handleChange}
+          />
+        </div>
+        <div style={styles.btn}>
           <button type="submit">Submit</button>
         </div>
       </form>

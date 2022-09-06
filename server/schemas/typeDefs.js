@@ -1,15 +1,10 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  input projectsBody {
+  input projectBody {
     projectName: String
     projectUrl: String
     projectPreview: String
-  }
-
-  input resumeBody {
-    resumeUrl: String
-    resumePreview: String
   }
 
   input portfolioBody {
@@ -18,8 +13,7 @@ const typeDefs = gql`
     bio: String
     portrait: String
     title: String
-    projects: [String]
-    resume: [String]
+    resumeUrl: String
   }
 
   type User {
@@ -42,6 +36,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     savePortfolio(input: portfolioBody!): User
+    saveProject(input: projectBody!): User
   }
 `;
 
