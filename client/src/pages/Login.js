@@ -56,7 +56,7 @@ const Login = () => {
 
     const [startLogin, setStartLogin] = useState(false);
 
-    const transitionProperties = startLogin ? { marginLeft: '-405px'} : {};
+    const transitionProperties = startLogin ? { marginLeft: '-410px'} : {};
 
     const transitionPropertiesOne = startLogin ? { marginLeft: '110px'} : {};
 
@@ -78,7 +78,7 @@ const Login = () => {
         <div className="inputForms" style={transitionProperties}>
           <div className="container">
             <form onSubmit={handleFormSubmit} id="userlogin">
-              <h2 className='center'></h2>
+              {/* <h2 className='center'></h2> */}
               <div className="flex-row space-between my-2">
                 <label htmlFor="email">Email address:</label>
                 <input
@@ -111,7 +111,7 @@ const Login = () => {
           </div>
           <div className="container">
               <form onSubmit={handleSignSubmit} id="register">
-              <h2></h2>
+              {/* <h2></h2> */}
                 <div className="flex-row space-between my-2">
                   <label htmlFor="username">Username:</label>
                   <input
