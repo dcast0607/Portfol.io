@@ -27,10 +27,15 @@ function StyleOne(params) {
         }
     }
 
+    const styles = {
+        container: {
+            height: '100%',
+        }
+    }
+
     return (
         //This is where the portfolio template will be, using the userData to fill in the template
-        //
-        <div>
+        <div style={styles.container}>
             <PortfolioContainer userData={userData} />
         </div>
     )

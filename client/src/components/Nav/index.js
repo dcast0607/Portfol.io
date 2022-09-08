@@ -18,7 +18,7 @@ function Nav() {
       display: 'flex',
       justifyContent: 'space-between',
       alignContent: 'center',
-      padding: '0% 5% 0% 5%'
+      padding: '0% 5% 0% 5%',
     },
     navLinks: {
       display: 'flex',

@@ -2,7 +2,6 @@ import Header from './Header'
 import Content from './Content'
 import Body from './Body'
 import Project from './Project'
-import Resume from './Resume'
 import { useState } from 'react'
 
 
@@ -38,19 +37,10 @@ const PortfolioContainer = (params) => {
             },
         })
     }
-
-    const loadResume = () => {
-        setBody(<Resume userData={params.userData}/>)
-        setStyle({
-            resume: {
-                color: '#f19b2c'
-            }
-        })
-    }
     
     return (
         <div style={styles.container}>
-            <Header loadAbout={loadAbout} loadProjects={loadProjects} loadResume={loadResume} style={style} userData={params}/>
+            <Header loadAbout={loadAbout} loadProjects={loadProjects} style={style} userData={params.userData}/>
             <Content content={body}/>
         </div>
     )

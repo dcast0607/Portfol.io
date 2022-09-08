@@ -1,5 +1,4 @@
 import Navigation from './Navigation'
-import Social from './Social'
 
 const styles = {
     header: {
@@ -30,8 +29,7 @@ const Header = (params) => {
                 <h3 style={styles.title}>{userData.name}</h3>
                 <div style={styles.subTitle}>{userData.title}</div>
             </header>
-            <Navigation loadAbout={params.loadAbout} loadProjects={params.loadProjects} loadResume={params.loadResume} style={params.style}/>
-            <Social />
+            <Navigation loadAbout={params.loadAbout} loadProjects={params.loadProjects} loadResume={params.loadResume} userData={userData} style={params.style}/>
         </div>
     )
 }

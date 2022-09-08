@@ -18,25 +18,25 @@ const CreatePortfolio = () => {
   const [ProjContent, setProjContent] = useState(<button>add project+</button>)
 
   const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      
-      try {
-        await savePortfolio({
-          variables: { input: { ...formState } }
-        });   
-        window.location.assign('/profile');
-      }  catch (err) {
-        console.error(err)
-      } 
-    };
+    event.preventDefault();
+    
+    try {
+      await savePortfolio({
+        variables: { input: { ...formState } }
+      });   
+      window.location.assign('/profile');
+    }  catch (err) {
+      console.error(err)
+    } 
+  };
 
   const handleChange = (event) => {
-      const { name, value } = event.target;
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    };
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
     const clickProjContent = () => {
       setProjContent(<AddProject />)
@@ -45,11 +45,14 @@ const CreatePortfolio = () => {
     const styles = {
       noUser: {
         width: '50%',
-        margin: '20px 25%',
+        margin: '25%',
         textAlign: 'center'
       },
       link: {
         textDecoration: 'none',
+      },
+      container: {
+        marginTop: '5%'
       },
       title: {
         textAlign: 'center',
@@ -107,7 +110,7 @@ const CreatePortfolio = () => {
 
   return (
       //here we will render the form that will gather the users information
-    <div> 
+    <div style={styles.container}> 
       <h2 style={styles.title}>CREATE YOUR PORTFOLIO</h2>
       <form onSubmit={handleFormSubmit} style={styles.form}>
       <div style={styles.inputContainer}>

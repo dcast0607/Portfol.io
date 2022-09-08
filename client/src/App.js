@@ -37,14 +37,16 @@ const client = new ApolloClient({
 
 function App() {
 const styles = {
-
+  portfolio: {
+    height: '1000px'
+  }
 }
 
   return (
     <ApolloProvider client={client}>
       <Router>
         <Nav style={styles.nav}/>
-        <div>
+        <div style={styles.portfolio}>
           <Routes>
             <Route
               path='/'

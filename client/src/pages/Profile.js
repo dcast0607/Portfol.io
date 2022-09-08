@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from '@apollo/client';
 import StyleOne from "../components/StyleOne";
 import StyleTwo from "../components/StyleTwo";
+import EditPortfolio from "../components/EditPortfolio";
 import { Link } from "react-router-dom";
 
 import { QUERY_ME } from '../utils/queries';
@@ -11,19 +12,38 @@ import { QUERY_ME } from '../utils/queries';
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_ME);
     const profile = data?.me || {};
-    const [portfolioBody, setPortfolioBody] = useState('none')
+    const [portfolioBody, setPortfolioBody] = useState('none');
+    const [EditContent, setEditContent] = useState(<button>Edit Portfolio</button>)
 
     const styles = {
       errMsg: {
         width: '50%',
-        margin: '20px 25%',
+        margin: '25%',
         textAlign: 'center'
       },
       link: {
         textDecoration: 'none',
       },
+      container: {
+        marginTop: '32px',
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+      },
     }
 
+    const [btnContainer, setBtnContainer] = useState({
+        width: '10%'
+    })
+
+    const clickEdit = () => {
+      setEditContent(<EditPortfolio userData={profile}/>)
+      setBtnContainer({
+        width: '50%'
+      })
+    }
+
+    //TO DO: Go through each part of the generated portfolio and make sure it looks how it is supposed to
     if (!profile?.username) {
         return (
           <h4 style={styles.errMsg}>
@@ -54,8 +74,13 @@ const Profile = () => {
     } 
 
   return (
-    <div>
-      {portfolioBody}
+    <div style={styles.container}>
+      <div style={btnContainer}>
+        <div onClick={clickEdit} style={styles.btn}>{EditContent}</div>
+      </div>
+      <div>
+        {portfolioBody}
+      </div>
     </div>
   )
 }

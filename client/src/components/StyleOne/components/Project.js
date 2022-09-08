@@ -35,6 +35,20 @@ const Project = (params) => { //create a project object and map over it instead 
         header: {
             margin: '0',
         },
+        h1: {
+            color: '#f19b2c',
+            fontSize: '5vw',
+            fontWeight: '600',
+            margin: '0',
+            lineHeight: '1em',
+        },
+        h2: {
+            color: 'white',
+            fontSize: '3vw',
+            marginBottom: '0',
+            fontWeight: '600',
+            padding: '0',
+        },
     };
     
     const projects = params.userData.projects
@@ -43,8 +57,8 @@ const Project = (params) => { //create a project object and map over it instead 
         return (
             <div>
                 <header>
-                    <h1 className="orange">MY PROJECTS</h1>
-                    <h2>CURRENTLY NO PROJECTS</h2>
+                    <h1 style={styles.h1}>MY PROJECTS</h1>
+                    <h2 style={styles.h2}>CURRENTLY NO PROJECTS</h2>
                 </header>
             </div>
         )
