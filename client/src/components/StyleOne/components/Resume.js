@@ -1,9 +1,10 @@
-const Resume = () => {
+const Resume = (params) => {
+    const userData = params.userData
     const styles = {
         resume: {
-            'max-width': '90%',
-            'max-height': 'fit-content',
-            'margin-top': '20px'
+            'maxWidth': '90%',
+            'maxHeight': 'fit-content',
+            'marginTop': '20px'
         },
     }
     //instead of including an image of the resume lets just take the user to the uploaded file 

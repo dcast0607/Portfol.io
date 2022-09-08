@@ -6,7 +6,8 @@ const resolvers = {
     Query: {
       me: async (parent, args, context) => {
         if (context.user) {
-          return User.findOne({ _id: context.user._id });
+          const res = await User.findOne({ _id: context.user._id }).select('-__v -password');
+          return res
         }
         throw new AuthenticationError('You need to be logged in!');
       }
@@ -35,27 +36,32 @@ const resolvers = {
   
         return { token, user };
       },
-      savePortfolio: async (parent, { portfolioBody }, context) => {
+      savePortfolio: async (parent, { input }, context) => {
         if (context.user) {
-          return User.findOneAndUpdate(
+          try {
+            const res =  await User.findOneAndUpdate(
               { _id: context.user._id },
               {
-                  $addToSet: { portfolio: portfolioBody },
+                  $addToSet: { portfolio: input },
               },
               {
                   new: true,
                   runValidators: true,
               }
-          );
+            );
+            return res;
+          } catch (err) {
+            console.log(err)
+          }
         }
         throw new AuthenticationError('You need to be logged in!');
       },
-      saveProject: async (parent, { projectBody }, context) => {
+      saveProject: async (parent, { input }, context) => {
         if (context.user) {
           return User.findOneAndUpdate(
               { _id: context.user._id },
               {
-                  $addToSet: { portfolio: { projects: projectBody } },
+                  $addToSet: { portfolio: { projects: input } },
               },
               {
                   new: true,

@@ -15,21 +15,21 @@ const styles = {
 }
 
 const Body = (params) => {
+    const userData = params.userData
     return (
         <div>
             <header>
-                <h1 className="orange">MY NAME IS {params.name}</h1>
+                <h1 className="orange">MY NAME IS {userData.name}</h1>
                 <h2>DEDICATED TO WRITING CLEAN CODE</h2>
             </header>
             <div style={styles.container}>
                 <div>
-                    <img alt="portrait" src={params.portrait} style={styles.portrait}/>
+                    <img alt="portrait" src={userData.portrait} style={styles.portrait}/>
                 </div>
                 <div>
                     <p style={styles.bio}>
-                        {params.bio}
+                        {userData.bio}
                     </p>
-                   
                 </div>
             </div>
         </div>

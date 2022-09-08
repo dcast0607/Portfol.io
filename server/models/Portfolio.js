@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const projectSchema = require('./Projects')
 
 //When adding fields to schema, make sure to update CreatePortfolio form to gather new fields data
@@ -28,5 +28,6 @@ const portfolioSchema = new Schema({
     type: [projectSchema]
   },
 });
+
 
 module.exports = portfolioSchema;

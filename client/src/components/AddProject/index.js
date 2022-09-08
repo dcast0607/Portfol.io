@@ -6,7 +6,6 @@ function AddProject() {
     const [formState, setFormState] = useState({ projectName: '', projectUrl: '', projectPreview: ''});
     const [saveProject] = useMutation(SAVE_PROJECT);
 
-
     const handleFormSubmit = async (event) => {
     event.preventDefault();
     

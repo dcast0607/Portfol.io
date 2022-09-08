@@ -68,7 +68,7 @@ const Login = () => {
       <div className="loginRegister">
         <div className="buttonSwitch">
           <div id="btn" style={transitionPropertiesOne}></div>
-          <button type="button" class="toggle-btn" onClick={() => setStartLogin(!startLogin)}>
+          <button type="button" className="toggle-btn" onClick={() => setStartLogin(!startLogin)}>
             <div className="spacebuttons">
               <span className="space">Login</span><span className="space">Register</span>
             </div>

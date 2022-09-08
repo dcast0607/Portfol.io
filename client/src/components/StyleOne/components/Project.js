@@ -1,42 +1,55 @@
-
-const styles = {
-    projects: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: '20px',
-    }, 
-    flex: {
-        display: 'flex',
-    },
-    fit: {
-        height: '0',
-        maxHeight: 'fit-content',
-    },
-    img: {
-        maxWidth: '85%',
-        maxHeight: 'fit-content',
-        border: '2px #f19b2c solid',
-        transition: 'all 0.5s ease-in-out',
-    },
-    title: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'relative',
-        bottom: '25%',
-        width: 'fit-content',
-        backgroundColor: '#f19b2c',
-        textDecoration: 'none',
-        color: 'white',
-        padding: '1% 2%',
-        zIndex: '1',
-    },
-    header: {
-        margin: '0',
-    },
-};
-
-const Project = (props) => { //create a project object and map over it instead of repeating the same code 
+const Project = (params) => { //create a project object and map over it instead of repeating the same code 
     //need to map over params.projects 
+
+    const styles = {
+        projects: {
+            display: 'flex',
+            flexDirection: 'column',
+            marginTop: '20px',
+        }, 
+        flex: {
+            display: 'flex',
+        },
+        fit: {
+            height: '0',
+            maxHeight: 'fit-content',
+        },
+        img: {
+            maxWidth: '85%',
+            maxHeight: 'fit-content',
+            border: '2px #f19b2c solid',
+            transition: 'all 0.5s ease-in-out',
+        },
+        title: {
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'relative',
+            bottom: '25%',
+            width: 'fit-content',
+            backgroundColor: '#f19b2c',
+            textDecoration: 'none',
+            color: 'white',
+            padding: '1% 2%',
+            zIndex: '1',
+        },
+        header: {
+            margin: '0',
+        },
+    };
+    
+    const projects = params.userData.projects
+    
+    if (projects.length === 0) {
+        return (
+            <div>
+                <header>
+                    <h1 className="orange">MY PROJECTS</h1>
+                    <h2>CURRENTLY NO PROJECTS</h2>
+                </header>
+            </div>
+        )
+    }
+
     return (
     <div>
         <header>
@@ -44,7 +57,7 @@ const Project = (props) => { //create a project object and map over it instead o
             <h2>CLICK ON THE PROJECT TO VIEW</h2>
         </header>
         <div style={styles.projects}>
-            {props.params.projects.map((project) => (
+            {params.userData.projects.map((project) => (
                 <div>map projects here</div>
             ))}
             <div style={styles.flex}>
