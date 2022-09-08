@@ -12,10 +12,10 @@ const styles = {
     },
 };
 
-const Content = (prop) => {
+const Content = (params) => {
     return (
         <div style={styles.container}>
-            <div style={styles.content}>{prop.content}</div>
+            <div style={styles.content}>{params.content}</div>
             <Footer />
         </div>
     )

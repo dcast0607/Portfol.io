@@ -33,6 +33,23 @@ export const LOGIN = gql`
 export const SAVE_PORTFOLIO = gql`
   mutation savePortfolio($input: portfolioBody!) {
     savePortfolio(input: $input) {
+      _id
+      username
+      portfolio {
+        portfolioStyle
+        name
+        bio
+        portrait
+        title
+        resumeUrl
+      }
+    }
+}
+`
+
+export const SAVE_PROJECT = gql`
+  mutation saveProject($input: projectBody!) {
+    saveProject(input: $input) {
       not sure what to return yet
     }
   }

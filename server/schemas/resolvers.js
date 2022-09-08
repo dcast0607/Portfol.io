@@ -7,8 +7,8 @@ const resolvers = {
     Query: {
       me: async (parent, args, context) => {
         if (context.user) {
-          const user = await User.findById(context.user._id)
-          return user;
+          const res = await User.findOne({ _id: context.user._id }).select('-__v -password');
+          return res
         }
   
         throw new AuthenticationError('Not logged in');
@@ -120,20 +120,42 @@ const resolvers = {
   
         return { token, user };
       },
-      //added addOrder mutation for stripe
-    //   addOrder: async (parent, { products }, context) => {
-    //     console.log(context);
-    //     if (context.user) {
-    //       const order = new Order({ products });
-  
-    //       await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-  
-    //       return order;
-    //     }
-
-    //     throw new AuthenticationError('Not logged in');
-    // },
-  }
-};
+      savePortfolio: async (parent, { input }, context) => {
+        if (context.user) {
+          try {
+            const res =  await User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                  $addToSet: { portfolio: input },
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+            );
+            return res;
+          } catch (err) {
+            console.log(err)
+          }
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
+      saveProject: async (parent, { input }, context) => {
+        if (context.user) {
+          return User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                  $addToSet: { portfolio: { projects: input } },
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+          );
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      }
+    }
+  };
   
   module.exports = resolvers;
