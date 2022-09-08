@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
 import Portfolio from "../components/Portfolio";
+import { Link } from "react-router-dom";
 
 
 import { QUERY_ME } from '../utils/queries';
@@ -27,7 +28,10 @@ const Profile = () => {
     return (
       //here we will load all components of the users profile
       <div>
-        <Portfolio args={profile}/>
+        <div>
+
+          <Portfolio args={profile}/>
+        </div>
       </div>
     )
     
