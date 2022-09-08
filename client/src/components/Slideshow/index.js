@@ -7,6 +7,8 @@ const styles = {
     container: {
         width: '40%',
         height: '300px',
+        flexDirection: 'column',
+        display: 'flex',
 
     },
     btnWrap: {
