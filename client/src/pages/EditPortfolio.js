@@ -7,6 +7,3 @@ import {StyleOne, StyleTwo} from "../components/PortfolioStyles";
 const EditPortfolio = () => {
     const {loading, data} = useQuery(QUERY_ME);
     const profile = data?.me || {};
-
-    const [formState, setFormState] = useState({portof})
-}

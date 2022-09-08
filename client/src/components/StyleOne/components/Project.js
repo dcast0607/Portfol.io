@@ -1,41 +1,68 @@
+const Project = (params) => { //create a project object and map over it instead of repeating the same code 
+    //need to map over params.projects 
 
-const styles = {
-    projects: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: '20px',
-    }, 
-    flex: {
-        display: 'flex',
-    },
-    fit: {
-        height: '0',
-        maxHeight: 'fit-content',
-    },
-    img: {
-        maxWidth: '85%',
-        maxHeight: 'fit-content',
-        border: '2px #f19b2c solid',
-        transition: 'all 0.5s ease-in-out',
-    },
-    title: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'relative',
-        bottom: '25%',
-        width: 'fit-content',
-        backgroundColor: '#f19b2c',
-        textDecoration: 'none',
-        color: 'white',
-        padding: '1% 2%',
-        zIndex: '1',
-    },
-    header: {
-        margin: '0',
-    },
-};
-
-const Project = () => { //create a project object and map over it instead of repeating the same code 
+    const styles = {
+        projects: {
+            display: 'flex',
+            flexDirection: 'column',
+            marginTop: '20px',
+        }, 
+        flex: {
+            display: 'flex',
+        },
+        fit: {
+            height: '0',
+            maxHeight: 'fit-content',
+        },
+        img: {
+            maxWidth: '85%',
+            maxHeight: 'fit-content',
+            border: '2px #f19b2c solid',
+            transition: 'all 0.5s ease-in-out',
+        },
+        title: {
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'relative',
+            bottom: '25%',
+            width: 'fit-content',
+            backgroundColor: '#f19b2c',
+            textDecoration: 'none',
+            color: 'white',
+            padding: '1% 2%',
+            zIndex: '1',
+        },
+        header: {
+            margin: '0',
+        },
+        h1: {
+            color: '#f19b2c',
+            fontSize: '5vw',
+            fontWeight: '600',
+            margin: '0',
+            lineHeight: '1em',
+        },
+        h2: {
+            color: 'white',
+            fontSize: '3vw',
+            marginBottom: '0',
+            fontWeight: '600',
+            padding: '0',
+        },
+    };
+    
+    const projects = params.userData.projects
+    
+    if (projects.length === 0) {
+        return (
+            <div>
+                <header>
+                    <h1 style={styles.h1}>MY PROJECTS</h1>
+                    <h2 style={styles.h2}>CURRENTLY NO PROJECTS</h2>
+                </header>
+            </div>
+        )
+    }
 
     return (
     <div>
@@ -44,10 +71,13 @@ const Project = () => { //create a project object and map over it instead of rep
             <h2>CLICK ON THE PROJECT TO VIEW</h2>
         </header>
         <div style={styles.projects}>
+            {params.userData.projects.map((project) => (
+                <div>map projects here</div>
+            ))}
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/mvcTechBlog" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require()}  alt="Project preview" style={styles.img}/>
+                    <img src={``}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Tech Blog</h5>
@@ -56,7 +86,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/E-CommerceBackEnd" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require()}  alt="Project preview" style={styles.img}/>
+                    <img src={``}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>E-Commerce</h5>
@@ -65,7 +95,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/expressNoteTaker" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require()}  alt="Project preview" style={styles.img}/>
+                    <img src={``}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Note Taker</h5>
@@ -77,7 +107,7 @@ const Project = () => { //create a project object and map over it instead of rep
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/employeeTracker" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require()}  alt="Project preview" style={styles.img}/>
+                    <img src={``}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Employee Tracker</h5>
@@ -86,7 +116,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://cartaud.github.io/etch-a-sketch/" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require()}  alt="Project preview" style={styles.img}/>
+                    <img src={``}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Etch-A-Sketch</h5>
@@ -95,7 +125,7 @@ const Project = () => { //create a project object and map over it instead of rep
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/vinylMusicShop" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require()}  alt="Project preview" style={styles.img}/>
+                    <img src={``}  alt="Project preview" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Music Store</h5>
