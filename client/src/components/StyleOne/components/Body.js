@@ -35,7 +35,6 @@ const Body = (params) => {
         <div>
             <header>
                 <h1 style={styles.h1}>MY NAME IS {uppercaseName}</h1>
-                <h2 style={styles.h2}>DEDICATED TO WRITING CLEAN CODE</h2>
             </header>
             <div style={styles.container}>
                 <div>

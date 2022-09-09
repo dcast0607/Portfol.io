@@ -53,6 +53,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     savePortfolio(input: portfolioBody!): User
     saveProject(input: projectBody!): User
+    editPortfolio(input: portfolioBody!): User
   }
 `;
 
