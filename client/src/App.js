@@ -13,8 +13,10 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
+import Share from './pages/Share';
 import CreatePortfolio from './pages/CreatePortfolio';
 import './App.css';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -63,6 +65,10 @@ const styles = {
             <Route 
               path='/profile'
               element={<Profile />} 
+            />
+            <Route
+              path='/profile/:id'
+              element={<Share />}
             />
             <Route
               path='/create'

@@ -46,6 +46,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    portfolio(_id: String): Portfolio
   }
 
   type Mutation {
@@ -53,6 +54,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     savePortfolio(input: portfolioBody!): User
     saveProject(input: projectBody!): User
+    editPortfolio(input: portfolioBody!): User
   }
 `;
 

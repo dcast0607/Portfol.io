@@ -13,7 +13,16 @@ const resolvers = {
   
         throw new AuthenticationError('Not logged in');
       },
-
+      portfolio: async (parent, { _id }) => {
+        const user = await User.findOne({ _id });
+        
+        const portfolio = user.portfolio[0]
+        if (!user) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+        console.log(portfolio)
+        return portfolio
+      }
       //added for stripe ordering (lines 17-97)
     //   products: async (parent, { category, name }) => {
     //     const params = {};
@@ -154,7 +163,37 @@ const resolvers = {
           );
         }
         throw new AuthenticationError('You need to be logged in!');
-      }
+      },
+      editPortfolio: async (parent, { input }, context) => {
+        if (context.user) {
+          try {
+            const remove =  await User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                $pop: { portfolio: -1},
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+            );
+            const res =  await User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                $addToSet: { portfolio: input },
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+            );
+            return res;
+          } catch (err) {
+            console.log(err)
+          }
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
     }
   };
   
