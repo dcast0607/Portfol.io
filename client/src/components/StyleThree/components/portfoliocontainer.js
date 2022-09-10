@@ -7,7 +7,7 @@ import Home from './pages/home';
 
 
 
-export function PortfolioContainer() {
+export default function PortfolioContainer() {
     const [currentPage, setCurrentPage] = useState('Home');
 
     const renderPage = () => {

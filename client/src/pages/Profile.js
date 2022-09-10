@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from '@apollo/client';
 import StyleOne from "../components/StyleOne";
 import StyleTwo from "../components/StyleTwo";
+import StyleThree from "../components/StyleThree";
 import EditPortfolio from "../components/EditPortfolio";
 import { Link } from "react-router-dom";
 
@@ -77,6 +78,8 @@ const Profile = () => {
       } else if (portfolioStyle === 'two') {
         setPortfolioBody(<StyleTwo portfolio={portfolio}/>)
       } else if (portfolioStyle === 'three') {
+        setPortfolioBody(<StyleThree portfolio={portfolio}/>)
+      } else {
         return <></>
       }
     } 

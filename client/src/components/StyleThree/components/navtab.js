@@ -1,5 +1,5 @@
 import React from 'react';
-import Resume from '../components/img/JTran.tech.resume.png'
+import Resume from './img/JTran.tech.resume.png';
 
 function Navtab({ currentPage, handlePageChange}) {
     return (

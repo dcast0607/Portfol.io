@@ -30,7 +30,7 @@ html {
 }
 
 .background {
-  background-image: url("/src/components/img/cat1.jpg");
+  background-image: url("./components/img/cat1.jpg");
   background-size: cover;
   bottom: 50%;
   width: 100%;
@@ -117,8 +117,6 @@ img {
 .nav-tabs {
   border-bottom: none;
 }
-
-@import "animate.css";
 
 .App {
   text-align: center;
