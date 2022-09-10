@@ -14,6 +14,7 @@ const Profile = () => {
     const profile = data?.me || {};
     const [portfolioBody, setPortfolioBody] = useState('none');
     const [EditContent, setEditContent] = useState(<button>Edit Portfolio</button>)
+    const [shareBtn, setShareBtn] = useState('Share Portfolio')
 
     const styles = {
       errMsg: {
@@ -35,6 +36,13 @@ const Profile = () => {
     const [btnContainer, setBtnContainer] = useState({
         width: '10%'
     })
+    const path = window.location.href
+
+    const copyUrl = () => {
+      const shareUrl = window.location.href + '/' + profile._id
+      navigator.clipboard.writeText(shareUrl)
+      setShareBtn('Copied to Clipboard')
+    }
 
     const clickEdit = () => {
       setEditContent(<EditPortfolio userData={profile}/>)
@@ -75,6 +83,7 @@ const Profile = () => {
   return (
     <div style={styles.container}>
       <div style={btnContainer}>
+        <button onClick={copyUrl}>{shareBtn}</button>
         <div onClick={clickEdit} style={styles.btn}>{EditContent}</div>
       </div>
       <div>
