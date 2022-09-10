@@ -7,7 +7,7 @@ import AddProject from "../AddProject";
 
 const EditPortfolio = (params) => {
     const portfolio = params.userData.portfolio[0]
-    const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: portfolio.projects });
+    const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, contactEmail: portfolio.contactEmail, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: portfolio.projects });
     const [editPortfolio] = useMutation(EDIT_PORTFOLIO);
 
     const [ProjContent, setProjContent] = useState(<button>add project+</button>)
@@ -159,6 +159,16 @@ const EditPortfolio = (params) => {
             onChange={handleChange}
           />
         </div>
+        <div style={styles.inputContainer}>
+        <label htmlFor="contactEmail">Email:</label>
+        <input
+          placeholder="johndoe@email.com"
+          name="contactEmail"
+          type="text"
+          id="contactEmail"
+          onChange={handleChange}
+        />
+      </div>
         <div style={styles.inputContainer}>
           <label htmlFor="bio">Bio:</label>
           <textarea

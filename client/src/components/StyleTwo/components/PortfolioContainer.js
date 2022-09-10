@@ -49,7 +49,7 @@ const styles = {
         <div style={styles.width}>
         <div style={styles.container}>
             <Header loadAbout={loadAbout} loadProjects={loadProjects} style={style} userData={params.userData}/>
-            <Content content={body}/>
+            <Content content={body} userData={params.userData}/>
         </div>
         </div>
     )

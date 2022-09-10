@@ -13,6 +13,7 @@ function StyleTwo(params) {
         userData = {
             name: params.portfolio.name,
             bio: params.portfolio.bio,
+            contactEmail: params.portfolio.contactEmail,
             portrait: params.portfolio.portrait,
             title: params.portfolio.title,
             resumeUrl: params.portfolio.resumeUrl,
@@ -21,7 +22,8 @@ function StyleTwo(params) {
     } else {
         userData = {
             name: 'John Doe', 
-            bio: 'Hi my name is John and this is my ', 
+            bio: 'Hi my name is John and this is my ',
+            contactEmail: 'johndoe@john.com', 
             portrait: '' ,
             title: 'Johns Portfolio',
             projects: [

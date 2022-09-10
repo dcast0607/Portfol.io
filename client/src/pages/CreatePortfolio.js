@@ -12,7 +12,7 @@ const CreatePortfolio = () => {
   const profile = data?.me || {};
   
   //saving info to Users portfolio schema 
-  const [formState, setFormState] = useState({ portfolioStyle: '', name: '', bio: '', portrait: '', title: '', resumeUrl: '', projects: [] });
+  const [formState, setFormState] = useState({ portfolioStyle: '', name: '', contactEmail: '', bio: '' , portrait: '', title: '', resumeUrl: '', projects: [] });
   const [savePortfolio] = useMutation(SAVE_PORTFOLIO);
 
   const [ProjContent, setProjContent] = useState(<button>add project+</button>)
@@ -155,6 +155,16 @@ const CreatePortfolio = () => {
           name="name"
           type="text"
           id="name"
+          onChange={handleChange}
+        />
+      </div>
+      <div style={styles.inputContainer}>
+        <label htmlFor="contactEmail">Email:</label>
+        <input
+          placeholder="johndoe@email.com"
+          name="contactEmail"
+          type="text"
+          id="contactEmail"
           onChange={handleChange}
         />
       </div>
