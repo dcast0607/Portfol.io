@@ -44,13 +44,30 @@ export const SAVE_PORTFOLIO = gql`
         resumeUrl
       }
     }
-}
+  }
 `
 
 export const SAVE_PROJECT = gql`
   mutation saveProject($input: projectBody!) {
     saveProject(input: $input) {
       not sure what to return yet
+    }
+  }
+`
+
+export const EDIT_PORTFOLIO = gql`
+  mutation editPortfolio($input: portfolioBody!) {
+    editPortfolio(input: $input) {
+      _id
+      username
+      portfolio {
+        portfolioStyle
+        name
+        bio
+        portrait
+        title
+        resumeUrl
+      }
     }
   }
 `

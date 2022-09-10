@@ -154,7 +154,37 @@ const resolvers = {
           );
         }
         throw new AuthenticationError('You need to be logged in!');
-      }
+      },
+      editPortfolio: async (parent, { input }, context) => {
+        if (context.user) {
+          try {
+            const remove =  await User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                $pop: { portfolio: -1},
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+            );
+            const res =  await User.findOneAndUpdate(
+              { _id: context.user._id },
+              {
+                $addToSet: { portfolio: input },
+              },
+              {
+                  new: true,
+                  runValidators: true,
+              }
+            );
+            return res;
+          } catch (err) {
+            console.log(err)
+          }
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
     }
   };
   

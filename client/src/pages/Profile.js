@@ -43,7 +43,6 @@ const Profile = () => {
       })
     }
 
-    //TO DO: Go through each part of the generated portfolio and make sure it looks how it is supposed to
     if (!profile?.username) {
         return (
           <h4 style={styles.errMsg}>
