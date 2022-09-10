@@ -3,13 +3,16 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    link: {
+        color: 'white',
     }
 }
 
 const Footer = () => {
     return (
         <div style={styles.container}>
-            <a href="mailto: chadd.artaud@gmail.com">Questions? Send me an email chadd.artaud@gmail.com</a>
+            <a style={styles.link} href="mailto: chadd.artaud@gmail.com">Questions? Send me an email chadd.artaud@gmail.com</a>
         </div>
     )
 }

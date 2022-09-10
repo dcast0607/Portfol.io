@@ -1,0 +1,165 @@
+html {
+  font-size: 70%;
+  height: 100%;
+  /* background-image: url("/src/components/img/catblank.png");
+  background-size: cover; */
+}
+
+@font-face {
+  font-family: "Fall";
+  src: url(./components/img/FALLISCOMINGREGULAR-MX9B.TTF) format("truetype");
+}
+
+@font-face {
+  font-family: "Amatory";
+  src: url(./components/img/AMATORY-BWABV.TTF) format("truetype");
+}
+
+.contact {
+  position: absolute;
+  right: 20px;
+}
+
+.projects {
+  background-color: rgb(219, 248, 255);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 20px;
+  /* border: 1px black solid; */
+  box-shadow: 0 0 3px 0px #000000;
+}
+
+.background {
+  background-image: url("/src/components/img/cat1.jpg");
+  background-size: cover;
+  bottom: 50%;
+  width: 100%;
+  height: 100vh;
+}
+
+p {
+  height: 40px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-item {
+  padding-left: 30px;
+}
+
+.containers {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 290px;
+  height: 250px;
+  border-radius: 20px;
+  /* border: 2px black solid; */
+  box-shadow: 0 0 10px 0px #ffffff;
+}
+
+.pictures {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  justify-content: left;
+  padding-top: 10%;
+  padding-left: 2%;
+  padding-right: 2%;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  color: black;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px;
+  padding: 0px 4px 0px 4px;
+  border-radius: 3px;
+}
+
+.navBar {
+  flex-direction: row-reverse;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  left: 15%;
+  width: 70%;
+  top: 87%;
+  font-family: "Amatory";
+}
+
+.aboutBar {
+  position: absolute;
+  text-align: center;
+  left: 15%;
+  width: 70%;
+  top: 87%;
+  font-family: "Amatory";
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+@import "animate.css";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input,
+textarea {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
