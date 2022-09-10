@@ -4,7 +4,7 @@ import { SAVE_PORTFOLIO } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries"
 import AddProject from "../components/AddProject";
 import { Link } from "react-router-dom";
-
+import UploadFileModule from "../components/uploadFileModule";
 
 const CreatePortfolio = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -187,6 +187,7 @@ const CreatePortfolio = () => {
           id="portrait"
           onChange={handleChange}
         />
+        <UploadFileModule />
       </div>
       <div onClick={clickProjContent} style={styles.btn}>{ProjContent}</div>
       <div style={styles.inputContainer}>
