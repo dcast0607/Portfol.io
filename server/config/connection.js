@@ -6,4 +6,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/no-name',
   useUnifiedTopology: true,
 });
 
+console.log(mongoose.connection);
+
 module.exports = mongoose.connection;
