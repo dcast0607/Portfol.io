@@ -18,3 +18,17 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_PORTFOLIO = gql`
+  query portfolio($_id: String) {
+    portfolio(_id: $_id) {
+      portfolioStyle
+      name
+      bio
+      portrait
+      title
+      resumeUrl
+      projects
+    }
+  }
+`;

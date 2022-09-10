@@ -13,7 +13,16 @@ const resolvers = {
   
         throw new AuthenticationError('Not logged in');
       },
-
+      portfolio: async (parent, { _id }) => {
+        const user = await User.findOne({ _id });
+        
+        const portfolio = user.portfolio[0]
+        if (!user) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+        console.log(portfolio)
+        return portfolio
+      }
       //added for stripe ordering (lines 17-97)
     //   products: async (parent, { category, name }) => {
     //     const params = {};

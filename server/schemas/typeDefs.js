@@ -46,6 +46,7 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    portfolio(_id: String): Portfolio
   }
 
   type Mutation {
