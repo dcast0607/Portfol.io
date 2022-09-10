@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoAtlasUri = encodeURI(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/no-name');
+const mongoAtlasUri = encodeURI(process.env.MONGODB_URI) || 'mongodb://127.0.0.1:27017/no-name';
 
 mongoose.connect(mongoAtlasUri, {
   useNewUrlParser: true,
