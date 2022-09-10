@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useMutation, useQuery } from '@apollo/client';
-import { SAVE_PORTFOLIO } from "../../utils/mutations";
+import { EDIT_PORTFOLIO } from "../../utils/mutations";
 import AddProject from "../AddProject";
 //Need new Mutation UPDATE_PORTFOLIO and replace it with SAVE_PORTFOLIO
 //The new mutation will first remove the original data in the portfolio array and then add the new data
@@ -8,7 +8,7 @@ import AddProject from "../AddProject";
 const EditPortfolio = (params) => {
     const portfolio = params.userData.portfolio[0]
     const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: portfolio.projects });
-    const [savePortfolio] = useMutation(SAVE_PORTFOLIO);
+    const [editPortfolio] = useMutation(EDIT_PORTFOLIO);
 
     const [ProjContent, setProjContent] = useState(<button>add project+</button>)
     
@@ -24,7 +24,7 @@ const EditPortfolio = (params) => {
         event.preventDefault();
         
         try {
-          await savePortfolio({
+          await editPortfolio({
             variables: { input: { ...formState } }
           });   
           window.location.assign('/profile');
@@ -142,7 +142,7 @@ const EditPortfolio = (params) => {
         <div style={styles.inputContainer}>
           <label htmlFor="name">Name:</label>
           <input
-            value={portfolio.name}
+            value={formState.name}
             name="name"
             type="text"
             id="name"
@@ -152,7 +152,7 @@ const EditPortfolio = (params) => {
         <div style={styles.inputContainer}>
           <label htmlFor="title">Title:</label>
           <input
-            value={portfolio.title}
+            value={formState.title}
             name="title"
             type="text"
             id="title"
@@ -162,7 +162,7 @@ const EditPortfolio = (params) => {
         <div style={styles.inputContainer}>
           <label htmlFor="bio">Bio:</label>
           <textarea
-            value={portfolio.bio}
+            value={formState.bio}
             name="bio"
             id="bio"
             onChange={handleChange}
@@ -172,7 +172,7 @@ const EditPortfolio = (params) => {
         <div style={styles.inputContainer}>
           <label htmlFor="portrait">Upload a self-portrait:</label>
           <input
-            value={portfolio.portrait}
+            value={formState.portrait}
             name="portrait"
             type="portrait"
             id="portrait"
@@ -181,9 +181,9 @@ const EditPortfolio = (params) => {
         </div>
         <div onClick={clickProjContent} style={styles.btn}>{ProjContent}</div>
         <div style={styles.inputContainer}>
-          <label htmlFor="name">Resume:</label>
+          <label htmlFor="resume">Resume:</label>
           <input
-            value={portfolio.resumeUrl}
+            value={formState.resumeUrl}
             name="resumeUrl"
             type="text"
             id="resume"
