@@ -23,6 +23,13 @@ const typeDefs = gql`
     portfolio: [Portfolio]
   }
 
+  type Image {
+    userId: ID!,
+    imageURL: String,
+    imageName: String,
+    imageID: ID!
+  }
+
   type Auth {
     token: ID
     user: User
