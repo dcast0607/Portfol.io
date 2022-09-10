@@ -16,7 +16,7 @@ const Content = (params) => {
     return (
         <div style={styles.container}>
             <div style={styles.content}>{params.content}</div>
-            <Footer />
+            <Footer userData={params.userData} />
         </div>
     )
 }

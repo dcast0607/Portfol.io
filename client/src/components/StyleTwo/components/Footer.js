@@ -1,4 +1,7 @@
-const styles = {
+const Footer = (params) => {
+    const userData = params.userData
+    
+    const styles = {
     container: {
         display: 'flex',
         justifyContent: 'center',
@@ -17,10 +20,11 @@ const styles = {
 }
 
 // TO DO: add email value from user data to be integrated in footer
-const Footer = () => {
+console.log(userData)
     return (
         <div style={styles.container}>
-            <p style={styles.footer}>Questions? Reach me via Email <a style={styles.link} href="mailto: USERDATA.EMAIL">here!</a></p>
+            <p style={styles.footer}>Questions? Reach me via Email at {userData.contactEmail}!</p>
+
         </div>
     )
 }
