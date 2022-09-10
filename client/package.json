@@ -15,7 +15,8 @@
     "react-dom": "^16.13.1",
     "react-images-uploading": "^3.1.7",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.2"
+    "react-scripts": "4.0.2",
+    "concurrently": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

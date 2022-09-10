@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/dcast0607/Portfol.io#readme",
   "dependencies": {
-    "react-images-uploading": "^3.1.7"
+    "react-images-uploading": "^3.1.7",
+    "concurrently": "^5.1.0"
   }
 }
