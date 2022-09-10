@@ -1,0 +1,14 @@
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #f19b2c;
+}
+
+.project-container img:hover {
+    box-shadow:  0px 0px 14px #f19b2c, 0 0 15px #f19b2c;
+    filter: blur(0px);
+}

@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import './styles/styles.css';
 import PortfolioContainer from "./components/PortfolioContainer"
 
-
-
-function StyleTwo(params) {
+function StyleThree(params) {
     
     //First check if the user is passing their information in to create a portfolio
     //If not, create the portfolio using the sample data (John Doe)
@@ -44,4 +42,4 @@ function StyleTwo(params) {
     )
 }
 
-export default StyleTwo
+export default StyleThree
