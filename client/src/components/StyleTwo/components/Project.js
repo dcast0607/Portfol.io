@@ -39,7 +39,7 @@ const styles = {
     h2: {
         color: '#f7f779',
         fontSize: '60px',
-        marginTop: '0em',
+        marginTop: '10em',
         fontWeight: '600',
         padding: '0',
     },
@@ -51,8 +51,9 @@ if (projects.length === 0) {
     return (
         <div>
             <header>
-                <h2 style={styles.h2}>CURRENTLY NO PROJECTS</h2>
+                
             </header>
+            <p style={styles.h2}>CURRENTLY NO PROJECTS</p>
         </div>
     )
 }
@@ -69,7 +70,7 @@ if (projects.length === 0) {
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/mvcTechBlog" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/techBlog.png')}  alt="Tech Blog" style={styles.img}/>
+                    <img src={''}  alt="Tech Blog" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Tech Blog</h5>
@@ -78,7 +79,7 @@ if (projects.length === 0) {
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/E-CommerceBackEnd" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/eCom.png')}  alt="E-Commerce" style={styles.img}/>
+                    <img src={''}  alt="E-Commerce" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>E-Commerce</h5>
@@ -87,7 +88,7 @@ if (projects.length === 0) {
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/expressNoteTaker" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/noteTaker.png')}  alt="Note Taker" style={styles.img}/>
+                    <img src={''}  alt="Note Taker" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Note Taker</h5>
@@ -99,7 +100,7 @@ if (projects.length === 0) {
             <div style={styles.flex}>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/employeeTracker" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/employeeTracker.png')}  alt="Employee Tracker" style={styles.img}/>
+                    <img src={''}  alt="Employee Tracker" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Employee Tracker</h5>
@@ -108,7 +109,7 @@ if (projects.length === 0) {
                 </div>
                 <div className="project-container">
                     <a href="https://cartaud.github.io/etch-a-sketch/" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/etch.png')}  alt="Etch-A-Sketch" style={styles.img}/>
+                    <img src={''}  alt="Etch-A-Sketch" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Etch-A-Sketch</h5>
@@ -117,7 +118,7 @@ if (projects.length === 0) {
                 </div>
                 <div className="project-container">
                     <a href="https://github.com/cartaud/vinylMusicShop" target="_blank" rel="noreferrer" style={styles.fit}>
-                    <img src={require('../images/musicStore.png')}  alt="Music Store" style={styles.img}/>
+                    <img src={''}  alt="Music Store" style={styles.img}/>
                     </a>
                     <div style={styles.title}>
                         <h5 style={styles.header}>Music Store</h5>
