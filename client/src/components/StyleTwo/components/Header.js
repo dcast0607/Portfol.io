@@ -5,7 +5,7 @@ const styles = {
     header: {
         backgroundColor: '#3d784a',
         position: 'absolute',
-        width: '100%',
+        width: '90%',
         padding: '0',
     },   
     title: {

@@ -10,7 +10,11 @@ const styles = {
     container: {
         display: 'flex',
         height: '100%',
+        
     },
+    width: {
+        width: '215%'
+    }
 };
 
 
@@ -42,9 +46,11 @@ const styles = {
 
     
     return (
+        <div style={styles.width}>
         <div style={styles.container}>
             <Header loadAbout={loadAbout} loadProjects={loadProjects} style={style} userData={params.userData}/>
             <Content content={body}/>
+        </div>
         </div>
     )
 }

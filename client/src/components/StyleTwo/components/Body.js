@@ -19,12 +19,13 @@ const Body = (params) => {
         bio: {
             color: 'white',
             fontFamily: 'Raleway' || 'sans-serif',
-            lineHeight: '2em',
+            lineHeight: '3em',
             fontSize: '20px',
             marginBottom: '10px',
         },
         biocontainer: {
-            width: '170%'
+            width: '170%',
+            height: '100%'
         },
         h1: {
             color: 'white',
