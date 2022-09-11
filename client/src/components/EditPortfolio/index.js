@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { useMutation, useQuery } from '@apollo/client';
 import { EDIT_PORTFOLIO } from "../../utils/mutations";
 import AddProject from "../AddProject";
+import UploadFileModule from "../uploadFileModule";
 //Need new Mutation UPDATE_PORTFOLIO and replace it with SAVE_PORTFOLIO
 //The new mutation will first remove the original data in the portfolio array and then add the new data
 
@@ -211,6 +212,7 @@ const EditPortfolio = (params) => {
             id="portrait"
             onChange={handleChange}
           />
+          <UploadFileModule />
         </div>
 
         <div style={styles.inputContainer}>
