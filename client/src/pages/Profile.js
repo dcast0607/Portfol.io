@@ -23,13 +23,14 @@ console.log(profile)
       errMsg: {
         width: '50%',
         margin: '25%',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: '20px'
       },
       link: {
-        textDecoration: 'none',
+        color: 'blue',
       },
       container: {
-        marginTop: '32px',
+        marginTop: '45px',
         height: '100%',
         width: '100%',
         display: 'flex',

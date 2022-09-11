@@ -12,15 +12,15 @@ export default function PortfolioContainer(params) {
 
     const renderPage = (params) => {
         if (currentPage === 'Home') {
-            return <Home />;
+            return <Home userData={params.userData}/>;
         }
         if (currentPage === 'Projects') {
-            return <Projects />;
+            return <Projects userData={params.userData}/>;
         }
         if (currentPage === 'Contact') {
-            return <Contact />;
+            return <Contact userData={params.userData}/>;
         }
-            return <Resume />;
+            return <Resume/>;
         };
     
     const handlePageChange = (page) => setCurrentPage(page);

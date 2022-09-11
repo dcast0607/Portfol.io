@@ -58,8 +58,8 @@ ul {
 }
 
 img {
-  width: 290px;
-  height: 250px;
+  /* width: 290px;
+  height: 250px; */
   border-radius: 20px;
   /* border: 2px black solid; */
   box-shadow: 0 0 10px 0px #ffffff;
