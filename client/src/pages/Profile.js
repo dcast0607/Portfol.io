@@ -17,6 +17,8 @@ const Profile = () => {
     const [EditContent, setEditContent] = useState(<button>Edit Portfolio</button>)
     const [shareBtn, setShareBtn] = useState('Share Portfolio')
 
+console.log(data);
+console.log(profile)
     const styles = {
       errMsg: {
         width: '50%',
@@ -82,7 +84,9 @@ const Profile = () => {
       } else {
         return <></>
       }
-    } 
+    }
+    
+    
 
   return (
     <div style={styles.container}>

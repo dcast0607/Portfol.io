@@ -9,6 +9,7 @@ const typeDefs = gql`
   type Portfolio {
     portfolioStyle: String
     name: String
+    contactEmail: String
     bio: String
     portrait: String
     title: String
@@ -37,6 +38,7 @@ const typeDefs = gql`
   input portfolioBody {
     portfolioStyle: String
     name: String
+    contactEmail: String
     bio: String
     portrait: String
     title: String
