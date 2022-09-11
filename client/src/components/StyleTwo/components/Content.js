@@ -2,13 +2,13 @@ import Footer from './Footer'
 
 const styles = {
     container: {
-        backgroundColor: '#252525',
-        width: '75%',
-        padding: '20px 5px',
+        backgroundColor: '#3d784a',
+        width: '100%',
+        
     },
     content: {
-        height: '95%',
-        marginBottom: '30px'
+        height: '70%',
+        marginBottom: '60px'
     },
 };
 
@@ -16,7 +16,7 @@ const Content = (params) => {
     return (
         <div style={styles.container}>
             <div style={styles.content}>{params.content}</div>
-            <Footer userData={params.userData}/>
+            <Footer userData={params.userData} />
         </div>
     )
 }

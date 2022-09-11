@@ -6,6 +6,7 @@ import AddProject from "../AddProject";
 //The new mutation will first remove the original data in the portfolio array and then add the new data
 
 const EditPortfolio = (params) => {
+
     const portfolio = params.userData.portfolio[0];
     
     const removeType = []
@@ -17,7 +18,8 @@ const EditPortfolio = (params) => {
       })
     });
 
-    const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: removeType });
+    const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, contactEmail: portfolio.contactEmail, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: removeType });
+
     const [editPortfolio] = useMutation(EDIT_PORTFOLIO);
 
     const handleChange = (event) => {
@@ -57,7 +59,11 @@ const EditPortfolio = (params) => {
         },
         title: {
           textAlign: 'center',
-          marginTop: '10px'
+          fontWeight: 'bold',
+          marginTop: '10px',
+          marginBottom: '40px',
+          letterSpacing: '1.5px',
+          fontFamily: 'Justink'
         },
         form: {
           display: 'flex',
@@ -68,7 +74,14 @@ const EditPortfolio = (params) => {
           marginLeft: '5%',
           marginRight: '5%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
+          
+          
+        },
+        inputHeadings: {
+          fontWeight: 'bold',
+          letterSpacing: '1px',
+          fontFamily: 'Justink'
         },
         portfolioStyles: {
           display: 'flex',
@@ -91,12 +104,19 @@ const EditPortfolio = (params) => {
           width: '100%',
           height: '5vw',
           outline: 'none',
-          padding: '4px'
+          borderStyle: 'solid',
+          borderWidth: '2.5px',
+          padding: '4px',
+          boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
         },
         btn: {
           marginLeft: '5%',
-          width: '10%'
+          width: '10%',
+          boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
         },
+        btnShadow: {
+          boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
+        }
     }
 
     return (
@@ -104,11 +124,11 @@ const EditPortfolio = (params) => {
       <div style={styles.container}>
         <div style={styles.headerContainer}>
             <h2 style={styles.title}>EDIT YOUR PORTFOLIO</h2>
-            <button onClick={cancel}>Cancel</button>
+            <button onClick={cancel} style={styles.btn}>Cancel</button>
         </div> 
         <form onSubmit={handleFormSubmit} style={styles.form}>
         <div style={styles.inputContainer}>
-          <label htmlFor="portfolioStyles">Choose a style for your portfolio:</label>
+          <label htmlFor="portfolioStyles" style={styles.inputHeadings}>Choose a style for your portfolio:</label>
           <div style={styles.portfolioStyles} name="portfolioStyles">
             <label htmlFor="portfolioStyleOne" style={styles.styleContainer}>
               <img src={`/images/slides/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
@@ -143,8 +163,8 @@ const EditPortfolio = (params) => {
           </div>
         </div>
         <div style={styles.inputContainer}>
-          <label htmlFor="name">Name:</label>
-          <input
+          <label htmlFor="name" style={styles.inputHeadings}>Name (First and Last):</label>
+          <input style={styles.btnShadow}
             value={formState.name}
             name="name"
             type="text"
@@ -153,8 +173,8 @@ const EditPortfolio = (params) => {
           />
         </div>
         <div style={styles.inputContainer}>
-          <label htmlFor="title">Title:</label>
-          <input
+          <label htmlFor="title" style={styles.inputHeadings}>Title of your Portfolio:</label>
+          <input style={styles.btnShadow}
             value={formState.title}
             name="title"
             type="text"
@@ -163,8 +183,18 @@ const EditPortfolio = (params) => {
           />
         </div>
         <div style={styles.inputContainer}>
-          <label htmlFor="bio">Bio:</label>
-          <textarea
+        <label htmlFor="contactEmail" style={styles.inputHeadings}>Email:</label>
+        <input style={styles.btnShadow}
+          placeholder="johndoe@email.com"
+          name="contactEmail"
+          type="text"
+          id="contactEmail"
+          onChange={handleChange}
+        />
+      </div>
+        <div style={styles.inputContainer}>
+          <label htmlFor="bio" style={styles.inputHeadings}>Bio: (include a paragraph about yourself)</label>
+          <textarea 
             value={formState.bio}
             name="bio"
             id="bio"
@@ -173,8 +203,8 @@ const EditPortfolio = (params) => {
           />
         </div>
         <div style={styles.inputContainer}>
-          <label htmlFor="portrait">Upload a self-portrait:</label>
-          <input
+          <label htmlFor="portrait" style={styles.inputHeadings}>Upload a self-portrait:</label>
+          <input style={styles.btnShadow}
             value={formState.portrait}
             name="portrait"
             type="portrait"
@@ -182,9 +212,10 @@ const EditPortfolio = (params) => {
             onChange={handleChange}
           />
         </div>
+
         <div style={styles.inputContainer}>
-          <label htmlFor="resume">Resume:</label>
-          <input
+          <label htmlFor="resume" style={styles.inputHeadings}>Resume (must be URL):</label>
+          <input style={styles.btnShadow}
             value={formState.resumeUrl}
             name="resumeUrl"
             type="text"
@@ -192,8 +223,8 @@ const EditPortfolio = (params) => {
             onChange={handleChange}
           />
         </div>
-        <div style={styles.btn}>
-          <button type="submit">Submit</button>
+        <div>
+          <button type="submit" style={styles.btn}>Submit</button>
         </div>
       </form>
       </div>

@@ -38,6 +38,7 @@ export const SAVE_PORTFOLIO = gql`
       portfolio {
         portfolioStyle
         name
+        contactEmail
         bio
         portrait
         title
@@ -60,6 +61,7 @@ export const EDIT_PORTFOLIO = gql`
       portfolio {
         portfolioStyle
         name
+        contactEmail
         bio
         portrait
         title

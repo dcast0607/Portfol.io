@@ -9,6 +9,7 @@ export const QUERY_ME = gql`
       portfolio {
         portfolioStyle
         name
+        contactEmail
         bio
         portrait
         title
@@ -28,6 +29,7 @@ export const QUERY_PORTFOLIO = gql`
     portfolio(_id: $_id) {
       portfolioStyle
       name
+      contactEmail
       bio
       portrait
       title

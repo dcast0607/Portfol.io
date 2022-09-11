@@ -18,6 +18,8 @@ const Profile = () => {
     const [ProjContent, setProjContent] = useState(<button>add project+</button>)
     const [shareBtn, setShareBtn] = useState('Share Portfolio')
 
+console.log(data);
+console.log(profile)
     const styles = {
       errMsg: {
         width: '50%',
@@ -96,7 +98,9 @@ const Profile = () => {
       } else if (portfolioStyle === 'three') {
         return <></>
       }
-    } 
+    }
+    
+    
 
   return (
     <div style={styles.container}>
