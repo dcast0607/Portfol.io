@@ -7,10 +7,10 @@ import Home from './pages/home';
 
 
 
-export default function PortfolioContainer() {
+export default function PortfolioContainer(params) {
     const [currentPage, setCurrentPage] = useState('Home');
 
-    const renderPage = () => {
+    const renderPage = (params) => {
         if (currentPage === 'Home') {
             return <Home />;
         }
