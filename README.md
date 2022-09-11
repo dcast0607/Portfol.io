@@ -53,7 +53,7 @@ Email: [dancastro.java@gmail.com](dancastro.java@gmail.com)
 ##### Heng Yu
 
 Github: [https://github.com/hengyu89](https://github.com/hengyu89) </br>
-Email: [heng@gmail.com](heng@gmail.com)
+Email: [heng.yu161@gmail.com](heng.yu161@gmail.com)
 
 ##### Joey Binas
 
