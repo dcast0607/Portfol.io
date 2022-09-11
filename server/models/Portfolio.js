@@ -11,6 +11,10 @@ const portfolioSchema = new Schema({
     type: String,
     required: true,
   },
+  contactEmail: {
+    type: String,
+    required: true,
+  },
   bio: {
     type: String,
     required: true,

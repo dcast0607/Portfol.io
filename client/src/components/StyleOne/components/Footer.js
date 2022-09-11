@@ -1,15 +1,21 @@
-const styles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+const Footer = (params) => {
+    const userData = params.userData
+    const styles = {
+        container: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        footer: {
+            color: 'white',
+            letterSpacing: '.75px'
+        }
     }
-}
 
-const Footer = () => {
+
     return (
         <div style={styles.container}>
-            <a href="mailto: chadd.artaud@gmail.com">Questions? Send me an email chadd.artaud@gmail.com</a>
+            <p style={styles.footer}>Questions? Comments? Email me at {userData.contactEmail}</p>
         </div>
     )
 }
