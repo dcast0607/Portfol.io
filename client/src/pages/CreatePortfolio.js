@@ -56,7 +56,16 @@ const CreatePortfolio = () => {
       },
       title: {
         textAlign: 'center',
-        marginTop: '10px'
+        marginTop: '10px',
+        letterSpacing: '3.5px',
+        fontFamily: 'Justink',
+        fontWeight: 'bold',
+        fontSize: '60px'
+      },
+      inputHeadings: {
+        fontWeight: 'bold',
+        letterSpacing: '1px',
+        fontFamily: 'Justink'
       },
       form: {
         display: 'flex',
@@ -90,12 +99,25 @@ const CreatePortfolio = () => {
         width: '50%',
         height: '5vw',
         outline: 'none',
-        padding: '4px'
+        borderStyle: 'solid',
+        borderWidth: '2.5px',
+        padding: '4px',
+        boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
       },
       btn: {
         marginLeft: '5%',
-        width: '10%'
+        fontSize: '20px',
+        width: '10%',
+        boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
       },
+      addProjbtn: {
+        marginLeft: '5%',
+        width: '4.1%',
+        boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
+      },
+      btnShadow: {
+        boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
+      }
     }
 
     if (!profile?.username) {
@@ -111,10 +133,10 @@ const CreatePortfolio = () => {
   return (
       //here we will render the form that will gather the users information
     <div style={styles.container}> 
-      <h2 style={styles.title}>CREATE YOUR PORTFOLIO</h2>
+      <h2 style={styles.title}>CREATE YOUR PORTFOL.IO</h2>
       <form onSubmit={handleFormSubmit} style={styles.form}>
       <div style={styles.inputContainer}>
-        <label htmlFor="portfolioStyles">Choose a style for your portfolio:</label>
+        <label htmlFor="portfolioStyles" style={styles.inputHeadings}>Choose a style for your portfolio:</label>
         <div style={styles.portfolioStyles} name="portfolioStyles">
           <label htmlFor="portfolioStyleOne" style={styles.styleContainer}>
             <img src={`/images/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
@@ -149,8 +171,8 @@ const CreatePortfolio = () => {
         </div>
       </div>
       <div style={styles.inputContainer}>
-        <label htmlFor="name">Name:</label>
-        <input
+        <label htmlFor="name" style={styles.inputHeadings}>Name: (First and Last):</label>
+        <input style={styles.btnShadow}
           placeholder="John Doe"
           name="name"
           type="text"
@@ -159,8 +181,8 @@ const CreatePortfolio = () => {
         />
       </div>
       <div style={styles.inputContainer}>
-        <label htmlFor="contactEmail">Email:</label>
-        <input
+        <label htmlFor="contactEmail" style={styles.inputHeadings}>Email:</label>
+        <input style={styles.btnShadow}
           placeholder="johndoe@email.com"
           name="contactEmail"
           type="text"
@@ -169,8 +191,8 @@ const CreatePortfolio = () => {
         />
       </div>
       <div style={styles.inputContainer}>
-        <label htmlFor="title">Title:</label>
-        <input
+        <label htmlFor="title" style={styles.inputHeadings}>Title of your Portfolio:</label>
+        <input style={styles.btnShadow}
           placeholder="Title for portfolio"
           name="title"
           type="text"
@@ -179,7 +201,7 @@ const CreatePortfolio = () => {
         />
       </div>
       <div style={styles.inputContainer}>
-        <label htmlFor="bio">Bio:</label>
+        <label htmlFor="bio" style={styles.inputHeadings}>Bio (include a paragraph about yourself):</label>
         <textarea
           placeholder="Describe yourself in a paragraph"
           name="bio"
@@ -189,8 +211,8 @@ const CreatePortfolio = () => {
         />
       </div>
       <div style={styles.inputContainer}>
-        <label htmlFor="portrait">Upload a self-portrait:</label>
-        <input
+        <label htmlFor="portrait" style={styles.inputHeadings}>Upload a self-portrait:</label>
+        <input style={styles.btnShadow}
           placeholder="John Doe"
           name="portrait"
           type="portrait"
@@ -198,10 +220,10 @@ const CreatePortfolio = () => {
           onChange={handleChange}
         />
       </div>
-      <div onClick={clickProjContent} style={styles.btn}>{ProjContent}</div>
+      <div onClick={clickProjContent} style={styles.addProjbtn}>{ProjContent}</div>
       <div style={styles.inputContainer}>
-        <label htmlFor="name">Resume:</label>
-        <input
+        <label htmlFor="name" style={styles.inputHeadings}>Resume (must be URL):</label>
+        <input style={styles.btnShadow}
           placeholder="Resume URL"
           name="resumeUrl"
           type="text"
@@ -209,8 +231,8 @@ const CreatePortfolio = () => {
           onChange={handleChange}
         />
       </div>
-      <div style={styles.btn}>
-        <button type="submit">Submit</button>
+      <div>
+        <button type="submit" style={styles.btn}>Submit</button>
       </div>
     </form>
     </div>
