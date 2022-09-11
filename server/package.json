@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start:startReact": "cd ../client && npm start",
     "watch": "nodemon"
   },
   "keywords": [],
