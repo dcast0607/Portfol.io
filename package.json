@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cd server && npm run start:startReact",
     "start:startClientApp": "cd client && npm start",
+    "start:startReact": "cd client && npm start",
     "develop": "cd server && npm start",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
