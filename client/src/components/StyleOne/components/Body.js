@@ -2,6 +2,9 @@ const Body = (params) => {
     const userData = params.userData
     const styles = {
         container: {
+            width: '100%'
+        },
+        content: {
             marginTop: '20px',
             display: 'flex',
             gap: '20px',
@@ -36,7 +39,7 @@ const Body = (params) => {
             <header>
                 <h1 style={styles.h1}>MY NAME IS {uppercaseName}</h1>
             </header>
-            <div style={styles.container}>
+            <div style={styles.content}>
                 <div>
                     <img alt="portrait" src={userData.portrait} style={styles.portrait}/>
                 </div>

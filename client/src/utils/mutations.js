@@ -42,15 +42,12 @@ export const SAVE_PORTFOLIO = gql`
         portrait
         title
         resumeUrl
+        projects {
+          projectName
+          projectUrl
+          projectPreview
+        }
       }
-    }
-  }
-`
-
-export const SAVE_PROJECT = gql`
-  mutation saveProject($input: projectBody!) {
-    saveProject(input: $input) {
-      not sure what to return yet
     }
   }
 `
@@ -67,6 +64,11 @@ export const EDIT_PORTFOLIO = gql`
         portrait
         title
         resumeUrl
+        projects {
+          projectName
+          projectUrl
+          projectPreview
+        }
       }
     }
   }
