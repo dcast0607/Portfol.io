@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 import StyleOne from "../components/StyleOne";
 import StyleTwo from "../components/StyleTwo";
 import EditPortfolio from "../components/EditPortfolio";
+import AddProject from "../components/AddProject";
 import { Link } from "react-router-dom";
 
 import { QUERY_ME } from '../utils/queries';
@@ -14,6 +15,7 @@ const Profile = () => {
     const profile = data?.me || {};
     const [portfolioBody, setPortfolioBody] = useState('none');
     const [EditContent, setEditContent] = useState(<button>Edit Portfolio</button>)
+    const [ProjContent, setProjContent] = useState(<button>add project+</button>)
     const [shareBtn, setShareBtn] = useState('Share Portfolio')
 
 console.log(data);
@@ -33,10 +35,19 @@ console.log(profile)
         width: '100%',
         display: 'flex',
       },
+      body: {
+        width: '100%'
+      },
+      btn: {
+        width: '100%'
+      },
     }
 
     const [btnContainer, setBtnContainer] = useState({
-        width: '10%'
+        width: '10%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px'
     })
     const path = window.location.href
 
@@ -44,12 +55,19 @@ console.log(profile)
       const shareUrl = window.location.href + '/' + profile._id
       navigator.clipboard.writeText(shareUrl)
       setShareBtn('Copied to Clipboard')
-    }
+    };
 
     const clickEdit = () => {
       setEditContent(<EditPortfolio userData={profile}/>)
       setBtnContainer({
         width: '50%'
+      })
+    };
+
+    const clickProjContent = () => {
+      setProjContent(<AddProject userData={profile}/>)
+      setBtnContainer({
+        width: '25%'
       })
     }
 
@@ -89,8 +107,9 @@ console.log(profile)
       <div style={btnContainer}>
         <button onClick={copyUrl}>{shareBtn}</button>
         <div onClick={clickEdit} style={styles.btn}>{EditContent}</div>
+        <div onClick={clickProjContent} style={styles.btn}>{ProjContent}</div>
       </div>
-      <div>
+      <div style={styles.body}>
         {portfolioBody}
       </div>
     </div>

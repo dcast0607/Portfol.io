@@ -14,7 +14,11 @@ export const QUERY_ME = gql`
         portrait
         title
         resumeUrl
-        projects
+        projects {
+          projectName
+          projectUrl
+          projectPreview
+        }
       }
     }
   }
@@ -30,7 +34,11 @@ export const QUERY_PORTFOLIO = gql`
       portrait
       title
       resumeUrl
-      projects
+      projects {
+        projectName
+        projectUrl
+        projectPreview
+      }
     }
   }
 `;

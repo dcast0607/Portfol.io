@@ -1,17 +1,38 @@
 import React, { useState } from "react";
 import { useMutation } from '@apollo/client';
-import { SAVE_PROJECT } from "../../utils/mutations";
+import { EDIT_PORTFOLIO } from "../../utils/mutations";
 
-function AddProject() {
-    const [formState, setFormState] = useState({ projectName: '', projectUrl: '', projectPreview: ''});
-    const [saveProject] = useMutation(SAVE_PROJECT);
+function AddProject(params) {
+    const portfolio = params.userData.portfolio[0]
 
+    const [formState, setFormState] = useState( { projectName: '', projectUrl: '', projectPreview: ''} );
+    const [saveProject] = useMutation(EDIT_PORTFOLIO);
+    const payload = 
+        { 
+            portfolioStyle: portfolio.portfolioStyle, 
+            name: portfolio.name, 
+            bio: portfolio.bio, 
+            portrait: portfolio.portrait, 
+            title: portfolio.title, 
+            resumeUrl: portfolio.resumeUrl, 
+            projects: portfolio.projects 
+        }
     const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    
+        event.preventDefault();
+        const removeType = []
+        payload.projects.forEach(project => {
+            removeType.push({
+                projectName: project.projectName, 
+                projectUrl: project.projectUrl, 
+                projectPreview: project.projectPreview
+            })
+        });
+        const arr = [...removeType, formState]
+        payload.projects = arr
         saveProject({
-        variables: {...formState},
+        variables: { input: { ...payload } },
         });        
+        window.location.assign('/profile');
     };
 
     const handleChange = (event) => {
@@ -45,14 +66,14 @@ function AddProject() {
             </div>
             <div>
                 <label htmlFor="projectPreview">Project Preview:</label>
-                <textarea
+                <input
                     name="projectPreview"
                     id="projectPreview"
                     onChange={handleChange}
                 />
             </div>
             <div className="flex-row flex-end">
-                <button type="submit">Add another project +</button>
+                <button type="submit">Add project +</button>
             </div>
         </form>
         </div>

@@ -6,12 +6,22 @@ import AddProject from "../AddProject";
 //The new mutation will first remove the original data in the portfolio array and then add the new data
 
 const EditPortfolio = (params) => {
-    const portfolio = params.userData.portfolio[0]
-    const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, contactEmail: portfolio.contactEmail, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: portfolio.projects });
+
+    const portfolio = params.userData.portfolio[0];
+    
+    const removeType = []
+    portfolio.projects.forEach(project => {
+      removeType.push({
+          projectName: project.projectName, 
+          projectUrl: project.projectUrl, 
+          projectPreview: project.projectPreview
+      })
+    });
+
+    const [formState, setFormState] = useState({ portfolioStyle: portfolio.portfolioStyle, name: portfolio.name, bio: portfolio.bio, contactEmail: portfolio.contactEmail, portrait: portfolio.portrait, title: portfolio.title, resumeUrl: portfolio.resumeUrl, projects: removeType });
+
     const [editPortfolio] = useMutation(EDIT_PORTFOLIO);
 
-    const [ProjContent, setProjContent] = useState(<button>add project+</button>)
-    
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormState({
@@ -22,7 +32,6 @@ const EditPortfolio = (params) => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        
         try {
           await editPortfolio({
             variables: { input: { ...formState } }
@@ -32,10 +41,6 @@ const EditPortfolio = (params) => {
           console.error(err)
         } 
       };
-
-    const clickProjContent = () => {
-        setProjContent(<AddProject />)
-    }
 
     const cancel = () => {
         window.location.assign('/profile');
@@ -126,7 +131,7 @@ const EditPortfolio = (params) => {
           <label htmlFor="portfolioStyles" style={styles.inputHeadings}>Choose a style for your portfolio:</label>
           <div style={styles.portfolioStyles} name="portfolioStyles">
             <label htmlFor="portfolioStyleOne" style={styles.styleContainer}>
-              <img src={`/images/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
+              <img src={`/images/slides/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
               <input
                 name="portfolioStyle"
                 type="radio"
@@ -136,7 +141,7 @@ const EditPortfolio = (params) => {
               />
             </label>
             <label htmlFor="portfolioStyleTwo" style={styles.styleContainer}>
-              <img src={`/images/slide1.png`} alt="preview for portfolio Style Two" style={styles.img}/>
+              <img src={`/images/slides/slide1.png`} alt="preview for portfolio Style Two" style={styles.img}/>
               <input
                 name="portfolioStyle"
                 type="radio"
@@ -146,7 +151,7 @@ const EditPortfolio = (params) => {
               />
             </label>
             <label htmlFor="portfolioStyleThree" style={styles.styleContainer}>
-              <img src={`/images/slide2.png`} alt="preview for portfolio Style Three" style={styles.img}/>
+              <img src={`/images/slides/slide2.png`} alt="preview for portfolio Style Three" style={styles.img}/>
               <input
                 name="portfolioStyle"
                 type="radio"
@@ -207,7 +212,7 @@ const EditPortfolio = (params) => {
             onChange={handleChange}
           />
         </div>
-        <div onClick={clickProjContent} style={styles.btnShadow}>{ProjContent}</div>
+
         <div style={styles.inputContainer}>
           <label htmlFor="resume" style={styles.inputHeadings}>Resume (must be URL):</label>
           <input style={styles.btnShadow}

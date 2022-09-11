@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { useMutation, useQuery } from '@apollo/client';
 import { SAVE_PORTFOLIO } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries"
-import AddProject from "../components/AddProject";
 import { Link } from "react-router-dom";
 
 
@@ -14,8 +13,6 @@ const CreatePortfolio = () => {
   //saving info to Users portfolio schema 
   const [formState, setFormState] = useState({ portfolioStyle: '', name: '', contactEmail: '', bio: '' , portrait: '', title: '', resumeUrl: '', projects: [] });
   const [savePortfolio] = useMutation(SAVE_PORTFOLIO);
-
-  const [ProjContent, setProjContent] = useState(<button>add project+</button>)
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -37,10 +34,6 @@ const CreatePortfolio = () => {
       [name]: value,
     });
   };
-
-    const clickProjContent = () => {
-      setProjContent(<AddProject />)
-    }
 
     const styles = {
       noUser: {
@@ -139,7 +132,7 @@ const CreatePortfolio = () => {
         <label htmlFor="portfolioStyles" style={styles.inputHeadings}>Choose a style for your portfolio:</label>
         <div style={styles.portfolioStyles} name="portfolioStyles">
           <label htmlFor="portfolioStyleOne" style={styles.styleContainer}>
-            <img src={`/images/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
+            <img src={`/images/slides/slide0.png`} alt="preview for portfolio Style One" style={styles.img}/>
             <input
               name="portfolioStyle"
               type="radio"
@@ -149,7 +142,7 @@ const CreatePortfolio = () => {
             />
           </label>
           <label htmlFor="portfolioStyleTwo" style={styles.styleContainer}>
-            <img src={`/images/slide1.png`} alt="preview for portfolio Style Two" style={styles.img}/>
+            <img src={`/images/slides/slide1.png`} alt="preview for portfolio Style Two" style={styles.img}/>
             <input
               name="portfolioStyle"
               type="radio"
@@ -159,7 +152,7 @@ const CreatePortfolio = () => {
             />
           </label>
           <label htmlFor="portfolioStyleThree" style={styles.styleContainer}>
-            <img src={`/images/slide2.png`} alt="preview for portfolio Style Three" style={styles.img}/>
+            <img src={`/images/slides/slide2.png`} alt="preview for portfolio Style Three" style={styles.img}/>
             <input
               name="portfolioStyle"
               type="radio"
@@ -220,7 +213,7 @@ const CreatePortfolio = () => {
           onChange={handleChange}
         />
       </div>
-      <div onClick={clickProjContent} style={styles.addProjbtn}>{ProjContent}</div>
+
       <div style={styles.inputContainer}>
         <label htmlFor="name" style={styles.inputHeadings}>Resume (must be URL):</label>
         <input style={styles.btnShadow}
