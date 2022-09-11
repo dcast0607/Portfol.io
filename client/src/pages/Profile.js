@@ -18,8 +18,6 @@ const Profile = () => {
     const [ProjContent, setProjContent] = useState(<button>add project+</button>)
     const [shareBtn, setShareBtn] = useState('Share Portfolio')
 
-console.log(data);
-console.log(profile)
     const styles = {
       errMsg: {
         width: '50%',
@@ -28,6 +26,7 @@ console.log(profile)
       },
       link: {
         textDecoration: 'none',
+        color: 'blue',
       },
       container: {
         marginTop: '32px',

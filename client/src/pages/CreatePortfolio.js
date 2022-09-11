@@ -186,7 +186,7 @@ const CreatePortfolio = () => {
       <div style={styles.inputContainer}>
         <label htmlFor="title" style={styles.inputHeadings}>Title of your Portfolio:</label>
         <input style={styles.btnShadow}
-          placeholder="Title for portfolio"
+          placeholder="Johns Coding Portfolio"
           name="title"
           type="text"
           id="title"

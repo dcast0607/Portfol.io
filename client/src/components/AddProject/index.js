@@ -11,6 +11,7 @@ function AddProject(params) {
         { 
             portfolioStyle: portfolio.portfolioStyle, 
             name: portfolio.name, 
+            contactEmail: portfolio.contactEmail,
             bio: portfolio.bio, 
             portrait: portfolio.portrait, 
             title: portfolio.title, 
