@@ -28,6 +28,7 @@ const Profile = () => {
       },
       link: {
         textDecoration: 'none',
+
         color: 'blue',
       },
       container: {
