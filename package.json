@@ -7,7 +7,7 @@
     "start": "cd server && npm run start:startReact",
     "start:startClientApp": "cd client && npm start",
     "start:startReact": "cd client && npm start",
-    "develop": "cd server && npm start",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },
@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/dcast0607/Portfol.io#readme",
   "dependencies": {
-    "react-images-uploading": "^3.1.7"
+    "react-images-uploading": "^3.1.7",
+    "concurrently": "^5.3.0"
+
   }
 }
