@@ -25,7 +25,8 @@ function Nav() {
       gap: '2vw',
       listStyle: 'none',
       color: 'white',
-      paddingTop: '8px'
+      paddingTop: '10px',
+      fontSize: '15px'
     },
     log: {
       textDecoration: 'none',
@@ -33,7 +34,8 @@ function Nav() {
       fontWeight: '300'
     },
     link: {
-      textDecoration: 'none'
+      textDecoration: 'none',
+      fontSize: '15px'
     }
     
   }
