@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "start:startReact": "cd ../client && npm start",
     "watch": "nodemon"
   },
   "keywords": [],
@@ -17,7 +18,9 @@
     "graphql": "^16.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.8",
-    "stripe": "^8.67.0"
+    "stripe": "^8.67.0",
+    "concurrently": "^5.1.0"
+
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

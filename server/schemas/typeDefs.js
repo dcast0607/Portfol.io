@@ -6,6 +6,12 @@ const { gql } = require('apollo-server-express');
 //Also need help with input types
 
 const typeDefs = gql`
+  type Project {
+    projectName: String
+    projectUrl: String
+    projectPreview: String
+  }
+
   type Portfolio {
     portfolioStyle: String
     name: String
@@ -14,7 +20,7 @@ const typeDefs = gql`
     portrait: String
     title: String
     resumeUrl: String
-    projects: [String]
+    projects: [Project]
   }
 
   type User {
@@ -43,7 +49,7 @@ const typeDefs = gql`
     portrait: String
     title: String
     resumeUrl: String
-    projects: [String]
+    projects: [projectBody]
   }
 
   type Query {
@@ -55,7 +61,6 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     savePortfolio(input: portfolioBody!): User
-    saveProject(input: projectBody!): User
     editPortfolio(input: portfolioBody!): User
   }
 `;

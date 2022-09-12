@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+//const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -20,7 +20,6 @@ const resolvers = {
         if (!user) {
           throw new AuthenticationError('Incorrect credentials');
         }
-        console.log(portfolio)
         return portfolio
       }
       //added for stripe ordering (lines 17-97)
@@ -149,23 +148,9 @@ const resolvers = {
         }
         throw new AuthenticationError('You need to be logged in!');
       },
-      saveProject: async (parent, { input }, context) => {
-        if (context.user) {
-          return User.findOneAndUpdate(
-              { _id: context.user._id },
-              {
-                  $addToSet: { portfolio: { projects: input } },
-              },
-              {
-                  new: true,
-                  runValidators: true,
-              }
-          );
-        }
-        throw new AuthenticationError('You need to be logged in!');
-      },
       editPortfolio: async (parent, { input }, context) => {
         if (context.user) {
+          console.log(input)
           try {
             const remove =  await User.findOneAndUpdate(
               { _id: context.user._id },

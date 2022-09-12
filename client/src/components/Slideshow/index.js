@@ -75,7 +75,7 @@ const styles = {
         <div style={styles.homecontainer}>
             <div style={styles.header}>Choose from a variety of styles!</div>
             <div style={styles.container}>
-                <img src={`/images/slide${slide}.png`} style={styles.img} alt={`Preview ${slide}`} />
+                <img src={`/images/slides/slide${slide}.png`} style={styles.img} alt={`Preview ${slide}`} />
                     <div style={styles.testimonial}>
                         <h2>"{testimonials[slide].testimonial}"</h2>
                         <h2>- {testimonials[slide].username}</h2>
