@@ -24,8 +24,7 @@ const Profile = () => {
         width: '50%',
         margin: '25%',
         textAlign: 'center',
-        fontSize: '20px'
-      },
+        fontSize: '20px',
         color: 'blue',
       },
       container: {
