@@ -2,12 +2,12 @@
   "name": "Portfol.io",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "./server/server.js",
   "scripts": {
     "start": "node server/server.js --ignore client",
     "heroku-postbuild": "cd server && npm run startReact",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "install": "npm i && cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
