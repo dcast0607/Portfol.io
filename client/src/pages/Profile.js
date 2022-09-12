@@ -24,7 +24,11 @@ const Profile = () => {
         width: '50%',
         margin: '25%',
         textAlign: 'center',
-        fontSize: '20px',
+        fontSize: '20px'
+      },
+      link: {
+        textDecoration: 'none',
+
         color: 'blue',
       },
       container: {

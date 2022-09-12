@@ -4,11 +4,9 @@ const Body = (params) => {
     const styles = {
         container: {
             position: 'relative',
-            width: '100vh',
-            height: '100vh',
             top: '10em',
             justifyContent: 'center',
-            columns: '2'
+            display: 'flex'
         },
         portrait: {
             width: '75%',
@@ -19,11 +17,13 @@ const Body = (params) => {
         bio: {
             color: 'white',
             fontFamily: 'Raleway' || 'sans-serif',
-            lineHeight: '3em',
+            lineHeight: '2em',
             fontSize: '20px',
             marginBottom: '10px',
         },
         biocontainer: {
+            display: 'flex',
+            flexDirection: 'column',
             width: '170%',
             height: '100%'
         },
@@ -45,15 +45,13 @@ const Body = (params) => {
 
     return (
         <div>
-    
             <div style={styles.container}>
                 <div style={styles.biocontainer}>
-                    <h1 style={styles.h1}>Welcome to my portfolio!&thinsp;</h1>
+                    <h1 style={styles.h1}>Welcome to my portfolio!</h1>
                     <h2 style={styles.h2}>A bit about me:</h2>
-                         
                     <p style={styles.bio}>
-                        {userData.bio}
-                    </p>
+                    {userData.bio}
+                </p>
                 </div>
                 <div>
                     <img alt="profile" src={userData.portrait} style={styles.portrait}/>

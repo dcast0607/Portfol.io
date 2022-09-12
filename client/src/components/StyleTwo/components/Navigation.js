@@ -18,17 +18,15 @@ const Navigation = (props) => {
         width: 'fit-content',
         border: 'none',
         letterSpacing: '.5px',
-        backgroundColor: '#202020',
+        backgroundColor: '#3d784a',
     }
 };
 
-
-    
-    return (
+return (
         <div style={styles.container}>
-            <button onClick={props.loadAbout} style={{...styles.btn, ...props.style.about}}>about me</button>
-            <button onClick={props.loadProjects} style={{...styles.btn, ...props.style.projects}}>projects</button>
-            <button onClick={props.loadResume} style={{...styles.btn, ...props.style.resume}}>resume</button>    
+            <button onClick={props.loadAbout} style={{...styles.btn, ...props.style.about}}>About Me</button>
+            <button onClick={props.loadProjects} style={{...styles.btn, ...props.style.projects}}>Projects</button>
+            <a href={`${props.userData.resumeUrl}`} target="_blank" rel="noreferrer" style={styles.btn}>Resume</a>    
             <br /><br />
         </div>
     )

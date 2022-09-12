@@ -4,11 +4,11 @@ const styles = {
     container: {
         backgroundColor: '#3d784a',
         width: '100%',
-        
     },
     content: {
         height: '70%',
-        marginBottom: '60px'
+        marginBottom: '20%',
+        padding: '20px'
     },
 };
 

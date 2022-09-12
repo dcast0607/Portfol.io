@@ -40,6 +40,7 @@ const Project = (params) => { //create a project object and map over it instead 
         },
         header: {
             margin: '0',
+            fontSize: '1.5vw'
         },
         h1: {
             color: '#f19b2c',
