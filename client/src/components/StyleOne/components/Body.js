@@ -17,6 +17,7 @@ const Body = (params) => {
             color: 'white',
             fontFamily: 'Raleway' || 'sans-serif',
             lineHeight: '25px',
+            fontSize: '1.5vw'
         },
         h1: {
             color: '#f19b2c',

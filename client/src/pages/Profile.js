@@ -26,6 +26,8 @@ const Profile = () => {
         textAlign: 'center',
         fontSize: '20px'
       },
+      link: {
+        textDecoration: 'none',
         color: 'blue',
       },
       container: {

@@ -20,7 +20,7 @@ const Footer = (params) => {
 }
 
 // TO DO: add email value from user data to be integrated in footer
-console.log(userData)
+
     return (
         <div style={styles.container}>
             <p style={styles.footer}>Questions? Reach me via Email at {userData.contactEmail}!</p>

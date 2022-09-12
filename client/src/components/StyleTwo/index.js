@@ -6,8 +6,6 @@ import PortfolioContainer from "./components/PortfolioContainer"
 
 function StyleTwo(params) {
     
-    //First check if the user is passing their information in to create a portfolio
-    //If not, create the portfolio using the sample data (John Doe)
     let userData
     if (params.portfolio) {
         userData = {
