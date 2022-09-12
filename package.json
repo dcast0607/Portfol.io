@@ -4,7 +4,8 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "start": "node ./server/server.js",
+    "heroku-postbuild": "cd client && npm start",
     "start2": "node ./server/server.js &&  start cd server && npm run start:startReact",
     "start:startClientApp": "cd client && npm start",
     "start:startReact": "cd client && npm start",
