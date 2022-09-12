@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PortfolioContainer from "./components/PortfolioContainer"
+import PortfolioContainer from "./components/portfoliocontainer"
 import './App.css';
 
 function StyleThree(params) {
