@@ -6,9 +6,6 @@
   "scripts": {
     "start": "node ./server/server.js",
     "heroku-postbuild": "cd client && npm start",
-    "start2": "node ./server/server.js &&  start cd server && npm run start:startReact",
-    "start:startClientApp": "cd client && npm start",
-    "start:startReact": "cd client && npm start",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
