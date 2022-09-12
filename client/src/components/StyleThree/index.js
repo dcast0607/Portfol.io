@@ -6,11 +6,13 @@ function StyleThree(params) {
     
     //First check if the user is passing their information in to create a portfolio
     //If not, create the portfolio using the sample data (John Doe)
+    console.log("We are getting to styleThree")
     let userData
     if (params.portfolio) {
         userData = {
             name: params.portfolio.name,
             bio: params.portfolio.bio,
+            contactEmail: params.portfolio.contactEmail,
             portrait: params.portfolio.portrait,
             title: params.portfolio.title,
             resumeUrl: params.portfolio.resumeUrl,
@@ -31,12 +33,13 @@ function StyleThree(params) {
     const styles = {
         container: {
             height: '100%',
-        }
+        },
+
     }
 
     return (
         //This is where the portfolio template will be, using the userData to fill in the template
-        <div style={styles.container}>
+        <div className='background' style={styles.container}>
             <PortfolioContainer userData={userData} />
         </div>
     )

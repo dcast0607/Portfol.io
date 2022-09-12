@@ -9,6 +9,8 @@ import sun from '../img/sunny.jpg';
 export default function Home(params) {
     const projects = params.userData.projects
 
+    console.log("how many projects", projects);
+
     const styles = {
         h1: {
             color: '#f19b2c',

@@ -1,9 +1,24 @@
+import { TypeOrFieldNameRegExp } from '@apollo/client/cache/inmemory/helpers';
 import React from 'react';
-import Resume from './img/JTran.tech.resume.png';
 
-function Navtab({ currentPage, handlePageChange}) {
+function Navtab({ currentPage, handlePageChange, userData}) {
+
+    console.log(userData);
+
+    const resume = userData.resumeUrl;
+
+    // const resume = params.resumeUrl;
+
+    const styles = {
+        nav: {
+            marginTop: '20px',
+            display: 'flex',
+            gap: '20px',
+        },
+    }
+
     return (
-        <ul className='nav nav-tabs'>
+        <ul style={styles.nav} className='nav nav-tabs'>
             <li className='nav-item'>
                 <a href='#home'
                 onClick={() => handlePageChange('Home')}
@@ -23,7 +38,7 @@ function Navtab({ currentPage, handlePageChange}) {
                 >Contact</a>
             </li>
             <li className='nav-item'>
-                <a href={Resume} target="_blank" rel='noreferrer noopener'
+                <a href={resume} target="_blank" rel='noreferrer noopener'
                 className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
                 >Resume</a>
             </li>

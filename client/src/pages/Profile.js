@@ -39,7 +39,8 @@ console.log(profile)
     }
 
     const [btnContainer, setBtnContainer] = useState({
-        width: '10%'
+        width: '10%',
+        top: '45px'
     })
     const path = window.location.href
 
