@@ -8,6 +8,7 @@
     "start:startReact": "cd ../client && npm start",
     "watch": "nodemon"
   },
+  "engines": { "node": "16.x.x", "npm": "8.x.x" },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "mongoose": "^6.1.8",
     "stripe": "^8.67.0",
     "concurrently": "^5.1.0"
+    
 
   },
   "devDependencies": {
