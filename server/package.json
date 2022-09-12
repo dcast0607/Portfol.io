@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "startReact": "cd ../client && npm start",
     "start:startReact": "cd ../client && npm start",
     "watch": "nodemon"
   },
@@ -20,9 +21,11 @@
     "mongoose": "^6.1.8",
     "stripe": "^8.67.0",
     "concurrently": "^5.1.0"
+    
 
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "bcrypt": "^4.0.1"
   }
 }
