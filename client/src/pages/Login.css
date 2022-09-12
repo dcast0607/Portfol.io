@@ -17,7 +17,7 @@ input {
 
 .port {
   font-family: "Titilium";
-  font-size: 20px;
+  font-size: 25px;
   color: black;
   font-weight: 600;
 }
@@ -29,7 +29,7 @@ input {
 }
 
 .folio {
-  font-size: 20px;
+  font-size: 25px;
   font-family: "Titilium";
   color: rgba(68, 68, 209, 0.829);
   font-weight: 600;

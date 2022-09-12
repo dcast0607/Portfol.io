@@ -117,6 +117,11 @@ const EditPortfolio = (params) => {
         },
         btnShadow: {
           boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
+        },
+        span: {
+          color: '#4444d1',
+          fontFamily: 'Justink',
+          fontWeight: 'bold'
         }
     }
 
@@ -124,7 +129,7 @@ const EditPortfolio = (params) => {
         //here we will render the form that will gather the users information
       <div style={styles.container}>
         <div style={styles.headerContainer}>
-            <h2 style={styles.title}>EDIT YOUR PORTFOLIO</h2>
+            <h2 style={styles.title}>EDIT YOUR PORTFOL.<span style={styles.span}>IO</span></h2>
             <button onClick={cancel} style={styles.btn}>Cancel</button>
         </div> 
         <form onSubmit={handleFormSubmit} style={styles.form}>

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import './styles/styles.css';
 import PortfolioContainer from "./components/PortfolioContainer"
+import './App.css';
 
-
-
-function StyleTwo(params) {
+function StyleThree(params) {
     
+    //First check if the user is passing their information in to create a portfolio
+    //If not, create the portfolio using the sample data (John Doe)
+    console.log("We are getting to styleThree")
     let userData
     if (params.portfolio) {
         userData = {
@@ -20,8 +21,7 @@ function StyleTwo(params) {
     } else {
         userData = {
             name: 'John Doe', 
-            bio: 'Hi my name is John and this is my ',
-            contactEmail: 'johndoe@john.com', 
+            bio: 'Hi my name is John and this is my ', 
             portrait: '' ,
             title: 'Johns Portfolio',
             projects: [
@@ -33,15 +33,16 @@ function StyleTwo(params) {
     const styles = {
         container: {
             height: '100%',
-        }
+        },
+
     }
 
     return (
         //This is where the portfolio template will be, using the userData to fill in the template
-        <div style={styles.container}>
+        <div className='background' style={styles.container}>
             <PortfolioContainer userData={userData} />
         </div>
     )
 }
 
-export default StyleTwo
+export default StyleThree

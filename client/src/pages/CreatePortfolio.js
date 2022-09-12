@@ -110,7 +110,13 @@ const CreatePortfolio = () => {
       },
       btnShadow: {
         boxShadow: '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)'
+      },
+      span: {
+        color: '#4444d1',
+        fontFamily: 'Justink',
+        fontWeight: 'bold'
       }
+
     }
 
     if (!profile?.username) {
@@ -126,7 +132,7 @@ const CreatePortfolio = () => {
   return (
       //here we will render the form that will gather the users information
     <div style={styles.container}> 
-      <h2 style={styles.title}>CREATE YOUR PORTFOL.IO</h2>
+      <h2 style={styles.title}>CREATE YOUR PORTFOL.<span style={styles.span}>IO</span></h2>
       <form onSubmit={handleFormSubmit} style={styles.form}>
       <div style={styles.inputContainer}>
         <label htmlFor="portfolioStyles" style={styles.inputHeadings}>Choose a style for your portfolio:</label>

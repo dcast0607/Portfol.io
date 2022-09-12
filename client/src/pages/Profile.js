@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from '@apollo/client';
 import StyleOne from "../components/StyleOne";
 import StyleTwo from "../components/StyleTwo";
+import StyleThree from "../components/StyleThree";
 import EditPortfolio from "../components/EditPortfolio";
 import AddProject from "../components/AddProject";
 import { Link } from "react-router-dom";
@@ -22,17 +23,20 @@ const Profile = () => {
       errMsg: {
         width: '50%',
         margin: '25%',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: '20px'
       },
       link: {
         textDecoration: 'none',
+
         color: 'blue',
       },
       container: {
-        marginTop: '32px',
+        marginTop: '45px',
         height: '100%',
         width: '100%',
         display: 'flex',
+        justifyContent: 'center',
       },
       body: {
         width: '100%'
@@ -44,9 +48,7 @@ const Profile = () => {
 
     const [btnContainer, setBtnContainer] = useState({
         width: '10%',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px'
+        top: '45px'
     })
     const path = window.location.href
 
@@ -95,6 +97,8 @@ const Profile = () => {
       } else if (portfolioStyle === 'two') {
         setPortfolioBody(<StyleTwo portfolio={portfolio}/>)
       } else if (portfolioStyle === 'three') {
+        setPortfolioBody(<StyleThree portfolio={portfolio}/>)
+      } else {
         return <></>
       }
     }

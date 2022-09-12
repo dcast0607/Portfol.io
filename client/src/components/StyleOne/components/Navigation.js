@@ -4,8 +4,7 @@ const Navigation = (props) => {
             marginTop: '50px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '8px',
-            marginBottom: '10px',
+            
         },
         btn: {
             textDecoration: 'none',
@@ -14,6 +13,7 @@ const Navigation = (props) => {
             width: 'fit-content',
             border: 'none',
             backgroundColor: '#202020',
+            padding:'8px'
         }
     };
 

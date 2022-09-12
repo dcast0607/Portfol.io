@@ -31,7 +31,7 @@ const Header = (params) => {
                 <h3 style={styles.title}>{userData.name}</h3>
                 <div style={styles.subTitle}>{userData.title}</div>
             </header>
-            <Navigation loadAbout={params.loadAbout} loadProjects={params.loadProjects} loadResume={params.loadResume} style={params.style}/>
+            <Navigation loadAbout={params.loadAbout} loadProjects={params.loadProjects} loadResume={params.loadResume} style={params.style} userData={params.userData}/>
             
         </div>
     )
