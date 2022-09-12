@@ -6,7 +6,7 @@ Application that allows a user to create modernized and responsive portfolio tem
 
 Users will be issued several prompts that are designed to visualize their portfolio concept. These prompts will include questions designed to give the user control over profile specifications, including header, body, and footer aesthetics, navigation bar functionality, and project history, among other attributes.
 
-After the preparation phase, all information input by the user will be populated onto a series of pre-made templates. Basic templates will be made readily available, with more design-savvy and complex designs accessible only through purchase on the app.
+After the preparation phase, all information input by the user will be populated onto a series of pre-made templates. Although not currently included in production, future development goals will call on utilization of Stripe API. In this phase, basic templates will be made readily available, with more design-savvy and complex designs accessible only through purchase on the app.
 
 ## Technologies Used
 
@@ -14,7 +14,8 @@ After the preparation phase, all information input by the user will be populated
 
 :ballot_box_with_check: CSS </br>
 :ballot_box_with_check: React </br>
-:ballot_box_with_check: Heroku
+:ballot_box_with_check: Heroku </br>
+:ballot_box_with_check: Cloudinary </br>
 
 ### Backend:
 
@@ -29,6 +30,8 @@ After the preparation phase, all information input by the user will be populated
 `npm run start` can be used after to initialize the app. If the app is not able to be run because the designated port is being used, `npx kill-port 3000` can be used to clear and prepare for proper utility.
 
 ## Deployed Link
+
+[Click here to demo Portfol.IO!](https://aqueous-spire-68906.herokuapp.com/)
 
 ## Contributors
 
