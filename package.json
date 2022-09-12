@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
+  "engines": { "node": "16.x.x", "npm": "8.x.x" },
   "scripts": {
     "start": "node ./server/server.js",
     "heroku-postbuild": "cd client && npm start",
