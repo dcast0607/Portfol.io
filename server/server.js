@@ -11,10 +11,12 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  introspection: true, 
+  playground: true,
   context: authMiddleware,
 });
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/images', express.static(path.join(__dirname, '../client/images')));

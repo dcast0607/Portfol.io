@@ -1,6 +1,8 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import '../../pages/Login.css';
+
 
 
 
@@ -8,24 +10,34 @@ function Nav() {
 
   const styles = {
     container: {
+      position: 'fixed',
+      top: '0',
       width: '100%',
-      backgroundColor: 'black',
+      backgroundColor: '#e7e7e7ce',
       color: 'white',
       display: 'flex',
       justifyContent: 'space-between',
-      padding: '1% 10% 1% 20%'
+      alignContent: 'center',
+      padding: '0% 5% 0% 5%',
     },
     navLinks: {
       display: 'flex',
-      gap: '1vw',
+      gap: '2vw',
       listStyle: 'none',
       color: 'white',
-      paddingTop: '1vw'
+      paddingTop: '10px',
+      fontSize: '15px'
     },
     log: {
       textDecoration: 'none',
-      color: 'white',
+      color: 'black',
+      fontWeight: '300'
     },
+    link: {
+      textDecoration: 'none',
+      fontSize: '15px'
+    }
+    
   }
 
     function showNavigation() {
@@ -70,7 +82,11 @@ function Nav() {
 
       return (
         <header style={styles.container}>
-            <h1>PORTFOL-IO</h1>
+            <div>
+                <Link to="/" style={styles.link}>
+                <span className="port">Portfol.</span><span className="folio">IO</span>
+                </Link>
+            </div>
             <nav>
                 {showNavigation()}
             </nav>

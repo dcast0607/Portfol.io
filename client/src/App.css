@@ -1,5 +1,6 @@
 * {
-  font-family: Helvetica;
+  font-family: Arial;
+  font-weight: 200;
 }
 
 body {
@@ -8,4 +9,14 @@ body {
   background-attachment: fixed;
   background-size: cover;
   /* background by SVGBackgrounds.com */
+}
+
+@font-face {
+  font-family: "Titilium";
+  src: url(../src/components/Titilium.ttf);
+}
+
+@font-face {
+  font-family: "Justink";
+  src: url(../src/components/Justink-0Wql4.ttf);
 }
